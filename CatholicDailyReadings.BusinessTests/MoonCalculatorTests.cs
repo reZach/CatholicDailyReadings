@@ -1,12 +1,13 @@
 using CatholicDailyReadings.Business;
+using Xunit;
 
 namespace CatholicDailyReadings.BusinessTests
 {
-    public class MoonCalcTests
+    public class MoonCalculatorTests
     {
         private readonly MoonCalculator _moonCalc;
 
-        public MoonCalcTests()
+        public MoonCalculatorTests()
         {
             _moonCalc = new MoonCalculator();
         }

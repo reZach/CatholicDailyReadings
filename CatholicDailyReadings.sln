@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.Business", "CatholicDailyReadings.Business\CatholicDailyReadings.Business.csproj", "{979771FC-72DF-4125-B31B-1675A90BDDBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings", "CatholicDailyReadings\CatholicDailyReadings.csproj", "{931C53FC-69F3-457A-9C71-CBC19365BF59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.Models", "CatholicDailyReadings.Models\CatholicDailyReadings.Models.csproj", "{CE813F20-51B3-4BB4-B061-F83B2F68951C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.Business", "CatholicDailyReadings.Business\CatholicDailyReadings.Business.csproj", "{105D0100-571D-4029-BA56-2F77E5707D25}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.Utils", "CatholicDailyReadings.Utils\CatholicDailyReadings.Utils.csproj", "{879A1E57-C268-4309-A0FA-3A313083865F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.Models", "CatholicDailyReadings.Models\CatholicDailyReadings.Models.csproj", "{B951F970-2C36-4F75-8F35-24D02467CDC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.BusinessTests", "CatholicDailyReadings.BusinessTests\CatholicDailyReadings.BusinessTests.csproj", "{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.BusinessTests", "CatholicDailyReadings.BusinessTests\CatholicDailyReadings.BusinessTests.csproj", "{5F7EA81A-44F3-4A1D-B45F-2391A1EB7040}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.UtilsTests", "CatholicDailyReadings.UtilsTests\CatholicDailyReadings.UtilsTests.csproj", "{9A8872D5-6A20-469B-8766-69484FD00A05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.Utils", "CatholicDailyReadings.Utils\CatholicDailyReadings.Utils.csproj", "{E93E06EB-E31D-4456-9345-9433D012AA94}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings", "CatholicDailyReadings.csproj", "{B4658C9A-5975-4053-ABE8-70201C542340}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.UtilsTests", "CatholicDailyReadings.UtilsTests\CatholicDailyReadings.UtilsTests.csproj", "{2BA402E0-4AF9-4566-BEBE-C74DD7605771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,35 +21,35 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{979771FC-72DF-4125-B31B-1675A90BDDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{979771FC-72DF-4125-B31B-1675A90BDDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{979771FC-72DF-4125-B31B-1675A90BDDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{979771FC-72DF-4125-B31B-1675A90BDDBB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE813F20-51B3-4BB4-B061-F83B2F68951C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE813F20-51B3-4BB4-B061-F83B2F68951C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE813F20-51B3-4BB4-B061-F83B2F68951C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE813F20-51B3-4BB4-B061-F83B2F68951C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{879A1E57-C268-4309-A0FA-3A313083865F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{879A1E57-C268-4309-A0FA-3A313083865F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{879A1E57-C268-4309-A0FA-3A313083865F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{879A1E57-C268-4309-A0FA-3A313083865F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A8872D5-6A20-469B-8766-69484FD00A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A8872D5-6A20-469B-8766-69484FD00A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A8872D5-6A20-469B-8766-69484FD00A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A8872D5-6A20-469B-8766-69484FD00A05}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4658C9A-5975-4053-ABE8-70201C542340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4658C9A-5975-4053-ABE8-70201C542340}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4658C9A-5975-4053-ABE8-70201C542340}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4658C9A-5975-4053-ABE8-70201C542340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{931C53FC-69F3-457A-9C71-CBC19365BF59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931C53FC-69F3-457A-9C71-CBC19365BF59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{931C53FC-69F3-457A-9C71-CBC19365BF59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931C53FC-69F3-457A-9C71-CBC19365BF59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{105D0100-571D-4029-BA56-2F77E5707D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105D0100-571D-4029-BA56-2F77E5707D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105D0100-571D-4029-BA56-2F77E5707D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105D0100-571D-4029-BA56-2F77E5707D25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B951F970-2C36-4F75-8F35-24D02467CDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B951F970-2C36-4F75-8F35-24D02467CDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B951F970-2C36-4F75-8F35-24D02467CDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B951F970-2C36-4F75-8F35-24D02467CDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7EA81A-44F3-4A1D-B45F-2391A1EB7040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7EA81A-44F3-4A1D-B45F-2391A1EB7040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7EA81A-44F3-4A1D-B45F-2391A1EB7040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7EA81A-44F3-4A1D-B45F-2391A1EB7040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E93E06EB-E31D-4456-9345-9433D012AA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E93E06EB-E31D-4456-9345-9433D012AA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E93E06EB-E31D-4456-9345-9433D012AA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E93E06EB-E31D-4456-9345-9433D012AA94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA402E0-4AF9-4566-BEBE-C74DD7605771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA402E0-4AF9-4566-BEBE-C74DD7605771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA402E0-4AF9-4566-BEBE-C74DD7605771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA402E0-4AF9-4566-BEBE-C74DD7605771}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4582EEAA-AD92-4A79-B394-99063E8305BD}
+		SolutionGuid = {A75FAAC3-2FBC-4727-BA28-4AB271D4B0AC}
 	EndGlobalSection
 EndGlobal

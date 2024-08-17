@@ -353,7 +353,7 @@ namespace CatholicDailyReadings.Business
 
             // 6 weeks (6 * 7 = 42);
             // + Saturday, Friday, Thursday, Wednesday to walk back to Ash Wednesday
-            return easter.AddDays(-46); 
+            return easter.AddDays(-46);
         }
     }
 }
