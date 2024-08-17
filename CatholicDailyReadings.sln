@@ -3,27 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings", "CatholicDailyReadings.csproj", "{83792AF4-FE20-41B8-B60F-106DF3149731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.Business", "CatholicDailyReadings.Business\CatholicDailyReadings.Business.csproj", "{979771FC-72DF-4125-B31B-1675A90BDDBB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CatholicDailyReadings.Utils", "CatholicDailyReadings.Utils", "{AFCE2C29-0B9F-47A5-B56A-D2B901B7218D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.Models", "CatholicDailyReadings.Models\CatholicDailyReadings.Models.csproj", "{CE813F20-51B3-4BB4-B061-F83B2F68951C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CatholicDailyReadings.Driver", "CatholicDailyReadings.Driver", "{EC49971A-D474-4FFB-BFB4-3549316DA7CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.Utils", "CatholicDailyReadings.Utils\CatholicDailyReadings.Utils.csproj", "{879A1E57-C268-4309-A0FA-3A313083865F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.Utils", "..\CatholicDailyReadings.Utils\CatholicDailyReadings.Utils.csproj", "{DC246D14-6A27-47BC-81AC-AD8915D303F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.BusinessTests", "CatholicDailyReadings.BusinessTests\CatholicDailyReadings.BusinessTests.csproj", "{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CatholicDailyReadings.Models", "CatholicDailyReadings.Models", "{25AF085C-8C43-4424-B080-A1207D2FC069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings.UtilsTests", "CatholicDailyReadings.UtilsTests\CatholicDailyReadings.UtilsTests.csproj", "{9A8872D5-6A20-469B-8766-69484FD00A05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.Models", "..\CatholicDailyReadings.Models\CatholicDailyReadings.Models.csproj", "{9BFCCEFA-98F8-4034-8941-963471FFD97A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CatholicDailyReadings.Business", "CatholicDailyReadings.Business", "{BC4A5112-2EA9-4127-AB03-53611B1C5795}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.Business", "..\CatholicDailyReadings.Business\CatholicDailyReadings.Business.csproj", "{0BD34E09-3138-4182-A274-B30B8545FB0F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CatholicDailyReadings.Tests", "CatholicDailyReadings.Tests", "{F0A783C6-A160-4EBA-AC65-BCCC40EA206F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.BusinessTests", "..\CatholicDailyReadings.BusinessTests\CatholicDailyReadings.BusinessTests.csproj", "{3EAA0C4D-5C38-4971-BDB8-153F04BACD23}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatholicDailyReadings.UtilsTests", "..\CatholicDailyReadings.UtilsTests\CatholicDailyReadings.UtilsTests.csproj", "{9CC5DB5C-DFEA-49E7-892D-73C8D349C9C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatholicDailyReadings", "CatholicDailyReadings.csproj", "{B4658C9A-5975-4053-ABE8-70201C542340}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,41 +21,33 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{83792AF4-FE20-41B8-B60F-106DF3149731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83792AF4-FE20-41B8-B60F-106DF3149731}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83792AF4-FE20-41B8-B60F-106DF3149731}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83792AF4-FE20-41B8-B60F-106DF3149731}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC246D14-6A27-47BC-81AC-AD8915D303F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC246D14-6A27-47BC-81AC-AD8915D303F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC246D14-6A27-47BC-81AC-AD8915D303F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC246D14-6A27-47BC-81AC-AD8915D303F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9BFCCEFA-98F8-4034-8941-963471FFD97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BFCCEFA-98F8-4034-8941-963471FFD97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BFCCEFA-98F8-4034-8941-963471FFD97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BFCCEFA-98F8-4034-8941-963471FFD97A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BD34E09-3138-4182-A274-B30B8545FB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BD34E09-3138-4182-A274-B30B8545FB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BD34E09-3138-4182-A274-B30B8545FB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BD34E09-3138-4182-A274-B30B8545FB0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3EAA0C4D-5C38-4971-BDB8-153F04BACD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EAA0C4D-5C38-4971-BDB8-153F04BACD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EAA0C4D-5C38-4971-BDB8-153F04BACD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EAA0C4D-5C38-4971-BDB8-153F04BACD23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CC5DB5C-DFEA-49E7-892D-73C8D349C9C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CC5DB5C-DFEA-49E7-892D-73C8D349C9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CC5DB5C-DFEA-49E7-892D-73C8D349C9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CC5DB5C-DFEA-49E7-892D-73C8D349C9C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{979771FC-72DF-4125-B31B-1675A90BDDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979771FC-72DF-4125-B31B-1675A90BDDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979771FC-72DF-4125-B31B-1675A90BDDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979771FC-72DF-4125-B31B-1675A90BDDBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE813F20-51B3-4BB4-B061-F83B2F68951C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE813F20-51B3-4BB4-B061-F83B2F68951C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE813F20-51B3-4BB4-B061-F83B2F68951C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE813F20-51B3-4BB4-B061-F83B2F68951C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879A1E57-C268-4309-A0FA-3A313083865F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879A1E57-C268-4309-A0FA-3A313083865F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879A1E57-C268-4309-A0FA-3A313083865F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879A1E57-C268-4309-A0FA-3A313083865F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05597CDF-2E0E-40CD-9A10-CE9214D67ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A8872D5-6A20-469B-8766-69484FD00A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A8872D5-6A20-469B-8766-69484FD00A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A8872D5-6A20-469B-8766-69484FD00A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A8872D5-6A20-469B-8766-69484FD00A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4658C9A-5975-4053-ABE8-70201C542340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4658C9A-5975-4053-ABE8-70201C542340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4658C9A-5975-4053-ABE8-70201C542340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4658C9A-5975-4053-ABE8-70201C542340}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{83792AF4-FE20-41B8-B60F-106DF3149731} = {EC49971A-D474-4FFB-BFB4-3549316DA7CC}
-		{DC246D14-6A27-47BC-81AC-AD8915D303F7} = {AFCE2C29-0B9F-47A5-B56A-D2B901B7218D}
-		{9BFCCEFA-98F8-4034-8941-963471FFD97A} = {25AF085C-8C43-4424-B080-A1207D2FC069}
-		{0BD34E09-3138-4182-A274-B30B8545FB0F} = {BC4A5112-2EA9-4127-AB03-53611B1C5795}
-		{3EAA0C4D-5C38-4971-BDB8-153F04BACD23} = {F0A783C6-A160-4EBA-AC65-BCCC40EA206F}
-		{9CC5DB5C-DFEA-49E7-892D-73C8D349C9C3} = {F0A783C6-A160-4EBA-AC65-BCCC40EA206F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4582EEAA-AD92-4A79-B394-99063E8305BD}
