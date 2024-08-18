@@ -6,6 +6,8 @@ namespace CatholicDailyReadings.Utils
     {
         /// <summary>
         /// Calculate the year based on <paramref name="date"/>.
+        /// This function works as-is if <paramref name="date"/> falls
+        /// before Advent for the given year.
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>

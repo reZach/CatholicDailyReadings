@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CatholicDailyReadings.Models\CatholicDailyReadings.Models.csproj" />
+    <ProjectReference Include="..\CatholicDailyReadings.Utils\CatholicDailyReadings.Utils.csproj" />
   </ItemGroup>
 
 </Project>
