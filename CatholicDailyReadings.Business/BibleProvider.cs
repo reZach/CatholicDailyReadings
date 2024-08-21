@@ -66,7 +66,7 @@ namespace CatholicDailyReadings.Business
             // If the Immaculate Conception falls on a Sunday, the readings
             // are said on the following day
             if ((immaculateConception.DayOfWeek == DayOfWeek.Sunday && date.Month == 12 && date.Day == 9) ||
-                date.Month == 12 && date.Day == 8)
+                (date.DayOfWeek != DayOfWeek.Sunday && date.Month == 12 && date.Day == 8))
                 return new DailyReading { FirstReading = "Gn 3:9-15, 20", SecondReading = "Eph 1:3-6, 11-12", Gospel = "Lk 1:26-38" };
 
             // Our Lady of Guadalupe
