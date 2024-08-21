@@ -143,6 +143,78 @@ namespace CatholicDailyReadings.Business
                     _ => null
                 };
             }
+            else if (dayDifference >= 14)
+            {
+                // Sunday
+                if (dayDifference == 14)
+                {
+                    return year switch
+                    {
+                        Year.A => new DailyReading { FirstReading = "Is 35:1-6a, 10", SecondReading = "Jas 5:7-10", Gospel = "Mt 11:2-11" },
+                        Year.B => new DailyReading { FirstReading = "Is 61:1-2a, 10-11", SecondReading = "1 Thes 5:16-24", Gospel = "Jn 1:6-8, 19-28" },
+                        Year.C => new DailyReading { FirstReading = "Zep 3:14-18a", SecondReading = "Phil 4:4-7", Gospel = "Lk 3:10-18" },
+                        _ => null
+                    };
+                }
+
+                // If the day is December 17th or 18th or later, different Advent readings should be used
+                DateTime cutOff = new DateTime(date.Year, 12, 17);
+
+                if (date < cutOff)
+                {
+                    return dayDifference switch
+                    {
+                        // Monday
+                        15 => new DailyReading { FirstReading = "Nm 24:2-7, 15-17a", Gospel = "Mt 21:23-27" },
+                        // Tuesday
+                        16 => new DailyReading { FirstReading = "Zep 3:1-2, 9-13", Gospel = "Mt 21:28-32" },
+                        // Wednesday
+                        17 => new DailyReading { FirstReading = "Is 45:6c-8, 18, 21c-25", Gospel = "Lk 7:18b-23" },
+                        // Thursday
+                        18 => new DailyReading { FirstReading = "Is 54:1-10", Gospel = "Lk 7:24-30" },
+                        // Friday
+                        19 => new DailyReading { FirstReading = "Is 56:1-3a, 6-8", Gospel = "Jn 5:33-36" },
+                        _ => null
+                    };
+                }
+
+                // Handle the 4th Sunday of Advent here, as it simplifies the logic a bit
+                if (date.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    return year switch
+                    {
+                        Year.A => new DailyReading { FirstReading = "Is 7:10-14", SecondReading = "Rom 1:1-7", Gospel = "Mt 1:18-24" },
+                        Year.B => new DailyReading { FirstReading = "2 Sm 7:1-5, 8b-12, 14a, 16", SecondReading = "Rom 16:25-27", Gospel = "Lk 1:26-38" },
+                        Year.C => new DailyReading { FirstReading = "Mi 5:1-4a", SecondReading = "Heb 10:5-10", Gospel = "Lk 1:39-45" },
+                        _ => null
+                    };
+                }
+
+
+                TimeSpan december17Difference = date.Subtract(cutOff);
+                int december17DayDifference = (int)december17Difference.TotalDays;
+
+                return december17DayDifference switch
+                {
+                    // December 17th
+                    0 => new DailyReading { FirstReading = "Gn 49:2, 8-10", Gospel = "Mt 1:1-17" },
+                    // 18th
+                    1 => new DailyReading { FirstReading = "Jer 23:5-8", Gospel = "Mt 1:18-24" },
+                    // 19th
+                    2 => new DailyReading { FirstReading = "Jgs 13:2-7, 24-25a", Gospel = "Lk 1:5-25" },
+                    // 20th
+                    3 => new DailyReading { FirstReading = "Is 7:10-14", Gospel = "Lk 1:26-38" },
+                    // 21st
+                    4 => new DailyReading { FirstReading = "Zep 3:14-18a", Gospel = "Lk 1:39-45" },
+                    // 22nd
+                    5 => new DailyReading { FirstReading = "1 Sm 1:24-28", Gospel = "Lk 1:46-56" },
+                    // 23rd
+                    6 => new DailyReading { FirstReading = "Mal 3:1-4, 23-24", Gospel = "Lk 1:57-66" },
+                    // 24th
+                    7 => new DailyReading { FirstReading = "2 Sm 7:1-5, 8b-12, 14a, 16", Gospel = "Lk 1:67-79" },
+                    _ => null
+                };
+            }
 
             return null;
         }
