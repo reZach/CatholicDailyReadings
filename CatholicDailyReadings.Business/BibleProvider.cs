@@ -7,12 +7,14 @@ namespace CatholicDailyReadings.Business
     public class BibleProvider
     {
         private readonly AdventCalculator _adventCalculator;
+        private readonly ChristmasCalculator _christmasCalculator;
         private readonly CycleCalculator _cycleCalculator;
         private readonly MoonCalculator _moonCalculator;
 
         public BibleProvider()
         {
             _adventCalculator = new AdventCalculator();
+            _christmasCalculator = new ChristmasCalculator();
             _cycleCalculator = new CycleCalculator();
             _moonCalculator = new MoonCalculator();
         }
@@ -23,6 +25,9 @@ namespace CatholicDailyReadings.Business
             DateTime advent = _adventCalculator.Calculate(date.Year);
             Year year = _cycleCalculator.CalculateYear(date);
             Cycle cycle = _cycleCalculator.CalculateCycle(date);
+
+            DateTime christmas = new DateTime(date.Year, 12, 25);
+            DateTime baptismOfTheLord = _christmasCalculator.CalculateBaptismOfTheLord(date.Year);
 
             // If date falls on or after Advent, increment Year & Cycle
             if (date >= advent)
@@ -43,8 +48,10 @@ namespace CatholicDailyReadings.Business
             DailyReading? dailyReading = null;
 
             // Return daily reading within Advent
-            if (date >= advent && date < new DateTime(date.Year, 12, 25))
+            if (date >= advent && date < christmas)
                 dailyReading = GetAdventReading(advent, date, year);
+            else if (date >= christmas && date <= baptismOfTheLord)
+                dailyReading = GetChristmasReading(date, year, cycle);
 
             // Populate year and cycle onto the daily reading
             if (dailyReading != null)
@@ -214,6 +221,124 @@ namespace CatholicDailyReadings.Business
                     7 => new DailyReading { FirstReading = "2 Sm 7:1-5, 8b-12, 14a, 16", Gospel = "Lk 1:67-79" },
                     _ => null
                 };
+            }
+
+            return null;
+        }
+
+        private DailyReading? GetChristmasReading(DateTime date, Year year, Cycle cycle)
+        {
+            // Christmas has 4 different readings depending on the Mass you go;
+            // since we only have support to show one set of readings per day,
+            // randomize the reading for Christmas
+            if (date.Month == 12 && date.Day == 25)
+            {
+                Random rand = new Random();
+                int r = rand.Next(4);
+
+                return r switch
+                {
+                    0 => new DailyReading { FirstReading = "Is 62:1-5", SecondReading = "Acts 13:16-17, 22-25", Gospel = "Mt 1:1-17" },
+                    1 => new DailyReading { FirstReading = "Is 9:1-6", SecondReading = "Ti 2:11-14", Gospel = "Lk 2:1-14" },
+                    2 => new DailyReading { FirstReading = "Is 62:11-12", SecondReading = "Ti 3:4-7", Gospel = "Lk 2:15-20" },
+                    3 => new DailyReading { FirstReading = "Is 52:7-10", SecondReading = "Heb 1:1-6", Gospel = "Jn 1:1-18" },
+                    _ => null
+                };
+            }
+
+            // Check feast days next
+
+            // Ephiphany of the Lord / Baptism of the Lord
+            DateTime holyFamily = _christmasCalculator.CalculateFeastOfTheHolyFamily(date.Year);
+            DateTime ephiphany = _christmasCalculator.CalculateEphiphanyOfOurLord(date.Year);
+            DateTime baptism = _christmasCalculator.CalculateBaptismOfTheLord(date.Year);
+
+            if (holyFamily == date)
+                return year switch
+                {
+                    Year.A => new DailyReading { FirstReading = "Sir 3:2-6, 12-14", SecondReading = "Col 3:12-21", Gospel = "Mt 2:13-15, 19-23" },
+                    Year.B => new DailyReading { FirstReading = "Gn 15:1-6; 21:1-3", SecondReading = "Heb 11:8, 11-12, 17-19", Gospel = "Lk 2:22-40" },
+                    Year.C => new DailyReading { FirstReading = "1 Sm 1:20-22, 24-28", SecondReading = "1 Jn 3:1-2, 21-24", Gospel = "Lk 2:41-52" },
+                    _ => null
+                };
+            if (ephiphany == date)
+                return new DailyReading { FirstReading = "Is 60:1-6", SecondReading = "Eph 3:2-3a, 5-6", Gospel = "Mt 2:1-12" };
+            if (baptism == date)
+                return year switch
+                {
+                    Year.A => new DailyReading { FirstReading = "Is 42:1-4, 6-7", SecondReading = "Acts 10:34-38", Gospel = "Mt 3:13-17" },
+                    Year.B => new DailyReading { FirstReading = "Is 55:1-11", SecondReading = "1 Jn 5:1-9", Gospel = "Mk 1:7-11" },
+                    Year.C => new DailyReading { FirstReading = "Is 40:1-5, 9-11", SecondReading = "Ti 2:11-14; 3:4-7", Gospel = "Lk 3:15-16, 21-22" },
+                    _ => null
+                };
+
+            DateTime christmas = new DateTime(date.Year, 12, 25);
+            TimeSpan difference = date.Subtract(christmas);
+            int dayDifference = (int)difference.TotalDays;
+
+            if (date < ephiphany)
+            {
+                return dayDifference switch
+                {
+                    // December 26th
+                    1 => new DailyReading { FirstReading = "Acts 6:8-10; 7:54-59", Gospel = "Mt 10:17-22" },
+                    // 27th
+                    2 => new DailyReading { FirstReading = "1 Jn 1:1-4", Gospel = "Jn 20:1a, 2-8" },
+                    // 28th
+                    3 => new DailyReading { FirstReading = "1 Jn 1:5—2:2", Gospel = "Mt 2:13-18" },
+                    // 29th
+                    4 => new DailyReading { FirstReading = "1 Jn 2:3-11", Gospel = "Lk 2:22-35" },
+                    // 30th
+                    5 => new DailyReading { FirstReading = "1 Jn 2:12-17", Gospel = "Lk 2:36-40" },
+                    // 31st
+                    6 => new DailyReading { FirstReading = "1 Jn 2:18-21", Gospel = "Jn 1:1-18" },
+                    // January 1st; Solemnity of the Blessed Virgin Mary
+                    7 => new DailyReading { FirstReading = "Nm 6:22-27", SecondReading = "Gal 4:4-7", Gospel = "Lk 2:16-21" },
+                    // January 2nd
+                    8 => new DailyReading { FirstReading = "1 Jn 2:22-28", Gospel = "Jn 1:19-28" },
+                    // 3rd
+                    9 => new DailyReading { FirstReading = "1 Jn 2:29—3:6", Gospel = "Jn 1:29-34" },
+                    // 4rd
+                    10 => new DailyReading { FirstReading = "1 Jn 3:7-10", Gospel = "Jn 1:35-42" },
+                    // 5th
+                    11 => new DailyReading { FirstReading = "1 Jn 3:11-21", Gospel = "Jn 1:43-51" },
+                    // 6th
+                    12 => new DailyReading { FirstReading = "1 Jn 5:5-13", Gospel = "Mk 1:7-11" },
+                    // 7th
+                    13 => new DailyReading { FirstReading = "1 Jn 5:14-21", Gospel = "Jn 2:1-11" },
+                    _ => null
+                };
+            }
+            else
+            {
+                TimeSpan ephiphanyDifference = date.Subtract(ephiphany);
+                int ephiphanyDayDifference = (int)ephiphanyDifference.TotalDays;
+                
+                if (date < baptism)
+                {
+                    return ephiphanyDayDifference switch
+                    {
+                        // Monday after Ephiphany
+                        1 => new DailyReading { FirstReading = "1 Jn 3:22—4:6", Gospel = "Mt 4:12-17, 23-25" },
+                        // Tuesday
+                        2 => new DailyReading { FirstReading = "1 Jn 4:7-10", Gospel = "Mk 6:34-44" },
+                        // Wednesday 
+                        3 => new DailyReading { FirstReading = "1 Jn 4:11-18", Gospel = "Mk 6:45-52" },
+                        // Thursday
+                        4 => new DailyReading { FirstReading = "1 Jn 4:19—5:4", Gospel = "Lk 4:14-22a" },
+                        // Friday
+                        5 => new DailyReading { FirstReading = "1 Jn 5:5-13", Gospel = "Lk 5:12-16" },
+                        // Saturday
+                        6 => new DailyReading { FirstReading = "1 Jn 5:14-21", Gospel = "Jn 3:22-30" },
+                        _ => null
+                    };
+                }
+                else
+                {
+                    // Ordinary time starts after the Baptism of the Lord. We are including the ordinary
+                    // time readings for the first week, in order to simplify the other method that will
+                    // be used for ordinary time readings
+                }
             }
 
             return null;
