@@ -43,6 +43,13 @@ namespace CatholicDailyReadings.Business
                     cycle = Cycle.Two;
                 else if (cycle == Cycle.Two)
                     cycle = Cycle.One;
+
+                baptismOfTheLord = _christmasCalculator.CalculateBaptismOfTheLord(date.Year + 1);
+            }
+            else
+            {
+                // Move Christmas back a year so we correctly step into GetChristmasReading below
+                christmas = new DateTime(date.Year - 1, 12, 25);
             }
 
             DailyReading? dailyReading = null;
@@ -273,6 +280,8 @@ namespace CatholicDailyReadings.Business
                 };
 
             DateTime christmas = new DateTime(date.Year, 12, 25);
+            if (date.Month == 1)
+                christmas = new DateTime(date.Year - 1, 12, 25);
             TimeSpan difference = date.Subtract(christmas);
             int dayDifference = (int)difference.TotalDays;
 
@@ -333,14 +342,13 @@ namespace CatholicDailyReadings.Business
                         _ => null
                     };
                 }
-                else
-                {
-                    // Ordinary time starts after the Baptism of the Lord. We are including the ordinary
-                    // time readings for the first week, in order to simplify the other method that will
-                    // be used for ordinary time readings
-                }
             }
 
+            return null;
+        }
+    
+        private DailyReading? GetFirst6WeeksOrdinaryTime(DateTime date, Cycle cycle)
+        {
             return null;
         }
     }
