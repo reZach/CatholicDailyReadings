@@ -342,7 +342,7 @@ namespace CatholicDailyReadings.Business
         }
 
         /// <summary>
-        /// Return the date of the beginning of Lent for a given <paramref name="year"/>.
+        /// Return the date of the beginning of Lent (= date of Ash Wednesday) for a given <paramref name="year"/>.
         /// </summary>
         /// <param name="year"></param>
         /// <returns></returns>

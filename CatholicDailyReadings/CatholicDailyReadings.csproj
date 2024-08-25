@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CatholicDailyReadings.Business\CatholicDailyReadings.Business.csproj" />
+    <ProjectReference Include="..\CatholicDailyReadings.Utils\CatholicDailyReadings.Utils.csproj" />
+  </ItemGroup>
+
 </Project>
