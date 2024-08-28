@@ -15,7 +15,11 @@ for (int i = 1900; i <= 2100; i++)
     Year year = cycleCalculator.CalculateYear(new DateTime(i, 1, 1));
 
     TimeSpan diff = ashWednesday.Subtract(baptismOfTheLord);
-    Console.WriteLine($"{i} ({year}) = {diff.TotalDays / 7}");
+    //Console.WriteLine($"{i} ({year}) = {diff.TotalDays / 7}");
+
+
+
+    Console.WriteLine($"{new DateTime(i, 3, 19).ToString("MM-dd-yyyy")} {new DateTime(i, 3, 19).DayOfWeek}");
 }
 
 

@@ -2264,5 +2264,598 @@ namespace CatholicDailyReadings.BusinessTests
         #endregion
 
         #endregion
+
+        [Fact]
+        public void GetStJosephFeastDay_NotSunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2024, 3, 19);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "2 Sm 7:4-5a, 12-14a, 16", SecondReading = "Rom 4:13, 16-18, 22", Gospel = "Mt 1:16, 18-21, 24a" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetStJosephFeastDay_Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2017, 3, 20);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "2 Sm 7:4-5a, 12-14a, 16", SecondReading = "Rom 4:13, 16-18, 22", Gospel = "Mt 1:16, 18-21, 24a" }.XUnitComparer);
+        }
+
+        #region Lent
+
+        [Fact]
+        public void GetLent_AshWednesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 5);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jl 2:12-18", Gospel = "Mt 6:1-6, 16-18" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_AshWednesday1DayAfter_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 6);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Dt 30:15-20", Gospel = "Lk 9:22-25" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_AshWednesday2DayAfter_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 7);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 58:1-9a", Gospel = "Mt 9:14-15" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_AshWednesday3DayAfter_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 8);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 58:9b-14", Gospel = "Lk 5:27-32" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearA_Week1Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2023, 2, 26);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.A, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Gn 2:7-9; 3:1-7", SecondReading = "Rom 5:12-19", Gospel = "Mt 4:1-11" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearB_Week1Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2024, 2, 18);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.B, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Gn 9:8-15", SecondReading = "1 Pt 3:18-22", Gospel = "Mk 1:12-15" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearC_Week1Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 9);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.C, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Dt 26:4-10", SecondReading = "Rom 10:8-13", Gospel = "Lk 4:1-13" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week1Monday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 10);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Lv 19:1-2, 11-18", Gospel = "Mt 25:31-46" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week1Tuesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 11);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 55:10-11", Gospel = "Mt 6:7-15" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week1Wednesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 12);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jon 3:1-10", Gospel = "Lk 11:29-32" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week1Thursday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 13);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Est C:12, 14-16, 23-25", Gospel = "Mt 7:7-12" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week1Friday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 14);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Ez 18:21-28", Gospel = "Mt 5:20-26" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week1Saturday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 15);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Dt 26:16-19", Gospel = "Mt 5:43-48" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearA_Week2Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2023, 3, 5);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.A, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Gn 12:1-4a", SecondReading = "2 Tm 1:8b-10", Gospel = "Mt 17:1-9" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearB_Week2Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2024, 2, 25);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.B, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Gn 22:1-2, 9a, 10-13, 15-18", SecondReading = "Rom 8:31b-34", Gospel = "Mk 9:2-10" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearC_Week2Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 16);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.C, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Gn 15:5-12, 17-18", SecondReading = "Phil 3:17–4:1", Gospel = "Lk 9:28b-36" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week2Monday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 17);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Dn 9:4b-10", Gospel = "Lk 6:36-38" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week2Tuesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 18);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 1:10, 16-20", Gospel = "Mt 23:1-12" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week2Wednesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2024, 2, 28);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jer 18:18-20", Gospel = "Mt 20:17-28" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week2Thursday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 20);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jer 17:5-10", Gospel = "Lk 16:19-31" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week2Friday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 21);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Gn 37:3-4, 12-13a, 17b-28a", Gospel = "Mt 21:33-43, 45-46" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week2Saturday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 22);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Mi 7:14-15, 18-20", Gospel = "Lk 15:1-3, 11-32" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearA_Week3Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2023, 3, 12);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.A, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Ex 17:3-7", SecondReading = "Rom 5:1-2, 5-8", Gospel = "Jn 4:5-42" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearB_Week3Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2024, 3, 3);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.B, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Ex 20:1-17", SecondReading = "1 Cor 1:22-25", Gospel = "Jn 2:13-25" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearC_Week3Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 23);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.C, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Ex 3:1-8a, 13-15", SecondReading = "1 Cor 10:1-6, 10-12", Gospel = "Lk 13:1-9" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week3Monday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 24);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "2 Kgs 5:1-15a", Gospel = "Lk 4:24-30" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week3Tuesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 25);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Dn 3:25, 34-43", Gospel = "Mt 18:21-35" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week3Wednesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 26);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Dt 4:1, 5-9", Gospel = "Mt 5:17-19" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week3Thursday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 27);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jer 7:23-28", Gospel = "Lk 11:14-23" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week3Friday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 28);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Hos 14:2-10", Gospel = "Mk 12:28b-34" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week3Saturday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 29);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Hos 6:1-6", Gospel = "Lk 18:9-14" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearA_Week4Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2023, 3, 19);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.A, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "1 Sm 16:1b, 6-7, 10-13a", SecondReading = "Eph 5:8-14", Gospel = "Jn 9:1-41" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearB_Week4Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2024, 3, 10);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.B, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "2 Chr 36:14-16, 19-23", SecondReading = "Eph 2:4-10", Gospel = "Jn 3:14-21" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearC_Week4Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 30);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.C, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jos 5:9a, 10-12", SecondReading = "2 Cor 5:17-21", Gospel = "Lk 15:1-3, 11-32" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week4Monday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 3, 31);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 65:17-21", Gospel = "Jn 4:43-54" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week4Tuesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 1);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Ez 47:1-9, 12", Gospel = "Jn 5:1-3a, 5-16" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week4Wednesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 2);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 49:8-15", Gospel = "Jn 5:17-30" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week4Thursday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 3);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Ex 32:7-14", Gospel = "Jn 5:31-47" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week4Friday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 4);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Wis 2:1a, 12-22", Gospel = "Jn 7:1-2, 10, 25-30" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week4Saturday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 5);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jer 11:18-20", Gospel = "Jn 7:40-53" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearA_Week5Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2023, 3, 26);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.A, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Ez 37:12-14", SecondReading = "Rom 8:8-11", Gospel = "Jn 11:1-45" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearB_Week5Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2024, 3, 17);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.B, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jer 31:31-34", SecondReading = "Heb 5:7-9", Gospel = "Jn 12:20-33" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearC_Week5Sunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 6);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.C, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 43:16-21", SecondReading = "Phil 3:8-14", Gospel = "Jn 8:1-11" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week5Monday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 7);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Dn 13:1-9, 15-17, 19-30, 33-62", Gospel = "Jn 8:1-11" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week5Tuesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 8);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Nm 21:4-9", Gospel = "Jn 8:21-30" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week5Wednesday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 9);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Dn 3:14-20, 91-92, 95", Gospel = "Jn 8:31-42" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week5Thursday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 10);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Gn 17:3-9", Gospel = "Jn 8:51-59" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week5Friday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 11);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Jer 20:10-13", Gospel = "Jn 10:31-42" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_Week5Saturday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 12);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Ez 37:21-28", Gospel = "Jn 11:45-56" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearA_PalmSunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2023, 4, 2);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.A, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Mt 26:14 – 27:66" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearB_PalmSunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2024, 3, 24);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.B, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Mk 14:1 – 15:47" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLentYearC_PalmSunday_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 13);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(Models.Enums.Year.C, reading.Year);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Lk 22:14 – 23:56" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_PalmSundayMondayAfter_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 14);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 42:1-7", Gospel = "Jn 12:1-11" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_PalmSundayTuesdayAfter_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 15);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 49:1-6", Gospel = "Jn 13:21-33, 36-38" }.XUnitComparer);
+        }
+
+        [Fact]
+        public void GetLent_PalmSundayWednesdayAfter_ReturnValue()
+        {
+            DateTime day = new DateTime(2025, 4, 16);
+            DailyReading? reading = _bibleProvider.GetDailyReading(day);
+
+            Assert.NotNull(reading);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Is 50:4-9a", Gospel = "Mt 26:14-25" }.XUnitComparer);
+        }
+
+        #endregion
+
     }
 }
