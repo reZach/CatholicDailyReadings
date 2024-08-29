@@ -62,6 +62,10 @@ namespace CatholicDailyReadings.Business
             if (stJosephReading != null)
                 return stJosephReading;
 
+            DailyReading? annunciation = GetAnnunciationFeastDay(date, ashWednesday, easter);
+            if (annunciation != null)
+                return annunciation;
+
             // Return daily reading within Advent
             if (date >= advent && date < christmas)
                 dailyReading = GetAdventReading(advent, date, year);
@@ -855,6 +859,35 @@ namespace CatholicDailyReadings.Business
             return null;
         }
 
+        private DailyReading? GetAnnunciationFeastDay(DateTime date, DateTime lent, DateTime easter)
+        {
+            DateTime annunciation = new DateTime(date.Year, 3, 25);
+
+            DateTime beginningOfHolyWeek = easter.AddDays(-7); // Palm Sunday
+            DateTime endOfOctaveOfEaster = easter.AddDays(6);
+
+            // If March 25th falls on a Sunday during Lent, then the feast
+            // day is transferred to Monday March 26th
+            if (lent <= annunciation && annunciation < beginningOfHolyWeek && annunciation.DayOfWeek == DayOfWeek.Sunday)
+            {
+                if (date == annunciation.AddDays(1))
+                    return new DailyReading { FirstReading = "Is 7:10-14; 8:10", SecondReading = "Heb 10:4-10", Gospel = "Lk 1:26-38" };
+            }
+            // If March 25th falls during Holy Week or the Easter Octave, then
+            // the feast day is transferred to Monday of the 2nd week of Easter
+            else if (beginningOfHolyWeek <= annunciation && annunciation <= endOfOctaveOfEaster)
+            {
+                DateTime transferredMonday = endOfOctaveOfEaster.AddDays(2);
+
+                if (date == transferredMonday)
+                    return new DailyReading { FirstReading = "Is 7:10-14; 8:10", SecondReading = "Heb 10:4-10", Gospel = "Lk 1:26-38" };
+            }
+            else if (date == annunciation)
+                return new DailyReading { FirstReading = "Is 7:10-14; 8:10", SecondReading = "Heb 10:4-10", Gospel = "Lk 1:26-38" };
+
+            return null;
+        }
+
         private DailyReading? GetEaster(DateTime date, DateTime easter, Year year)
         {
             TimeSpan easterDifference = date.Subtract(easter);
@@ -863,15 +896,15 @@ namespace CatholicDailyReadings.Business
             return easterDayDifference switch
             {
                 // Holy Thursday
-                -3 => new DailyReading { FirstReading = "Ex 12:1-8, 11-14", SecondReading = "1 Cor 11:23-26", Gospel = "Jn 13:1-15" };
+                -3 => new DailyReading { FirstReading = "Ex 12:1-8, 11-14", SecondReading = "1 Cor 11:23-26", Gospel = "Jn 13:1-15" },
                 // Good Friday
-                -2 => new DailyReading { FirstReading = "Is 52:13—53:12", SecondReading = "Heb 4:14-16; 5:7-9", Gospel = "Jn 18:1—19:42" };
+                -2 => new DailyReading { FirstReading = "Is 52:13—53:12", SecondReading = "Heb 4:14-16; 5:7-9", Gospel = "Jn 18:1—19:42" },
                 // Holy Saturday
-                -1 when year is Year.A => new DailyReading { FirstReading = "Ex 14:15—15:1", SecondReading = "Rom 6:3-11", Gospel = "Mt 28:1-10" };
-                -1 when year is Year.B => new DailyReading { FirstReading = "Ex 14:15—15:1", SecondReading = "Rom 6:3-11", Gospel = "Mk 16:1-7" };
-                -1 when year is Year.C => new DailyReading { FirstReading = "Ex 14:15—15:1", SecondReading = "Rom 6:3-11", Gospel = "Lk 24:1-12" };
+                -1 when year is Year.A => new DailyReading { FirstReading = "Ex 14:15—15:1", SecondReading = "Rom 6:3-11", Gospel = "Mt 28:1-10" },
+                -1 when year is Year.B => new DailyReading { FirstReading = "Ex 14:15—15:1", SecondReading = "Rom 6:3-11", Gospel = "Mk 16:1-7" },
+                -1 when year is Year.C => new DailyReading { FirstReading = "Ex 14:15—15:1", SecondReading = "Rom 6:3-11", Gospel = "Lk 24:1-12" },
                 // Easter Sunday
-                0 => new DailyReading { FirstReading = "Acts 10:34a, 37-43", SecondReading = "Col 3:1-4", Gospel = "Jn 20:1-9" };
+                0 => new DailyReading { FirstReading = "Acts 10:34a, 37-43", SecondReading = "Col 3:1-4", Gospel = "Jn 20:1-9" },
                 // Monday
                 1 => new DailyReading { FirstReading = "Acts 2:14, 22-33", Gospel = "Mt 28:8-15d" },
                 // Tuesday
@@ -885,9 +918,9 @@ namespace CatholicDailyReadings.Business
                 // Saturday
                 6 => new DailyReading { FirstReading = "Acts 4:13-21", Gospel = "Mk 16:9-15" },
                 // 2nd Sunday of Easter
-                7 when year is Year.A => new DailyReading { FirstReading = "Acts 2:42-47", SecondReading = "1 Pt 1:3-9", Gospel = "Jn 20:19-31" };
-                7 when year is Year.B => new DailyReading { FirstReading = "Acts 4:32-35v", SecondReading = "1 Jn 5:1-6", Gospel = "Jn 20:19-31" };
-                7 when year is Year.C => new DailyReading { FirstReading = "Acts 5:12-16", SecondReading = "Rv 1:9-11a, 12-13, 17-19", Gospel = "Jn 20:19-31" };
+                7 when year is Year.A => new DailyReading { FirstReading = "Acts 2:42-47", SecondReading = "1 Pt 1:3-9", Gospel = "Jn 20:19-31" },
+                7 when year is Year.B => new DailyReading { FirstReading = "Acts 4:32-35v", SecondReading = "1 Jn 5:1-6", Gospel = "Jn 20:19-31" },
+                7 when year is Year.C => new DailyReading { FirstReading = "Acts 5:12-16", SecondReading = "Rv 1:9-11a, 12-13, 17-19", Gospel = "Jn 20:19-31" },
                 // Monday
                 8 => new DailyReading { FirstReading = "Acts 4:23-31", Gospel = "Jn 3:1-8" },
                 // Tuesday
@@ -901,9 +934,9 @@ namespace CatholicDailyReadings.Business
                 // Saturday
                 13 => new DailyReading { FirstReading = "Acts 6:1-7", Gospel = "Jn 6:16-21" },
                 // 3rd Sunday of Easter
-                14 when year is Year.A => new DailyReading { FirstReading = "Acts 2:14, 22-33", SecondReading = "1 Pt 1:17-21", Gospel = "Lk 24:13-35" };
-                14 when year is Year.B => new DailyReading { FirstReading = "Acts 3:13-15, 17-19", SecondReading = "1 Jn 2:1-5a", Gospel = "Lk 24:35-48" };
-                14 when year is Year.C => new DailyReading { FirstReading = "Acts 5:27-32, 40b-41", SecondReading = "Rv 5:11-14", Gospel = "Jn 21:1-19" };
+                14 when year is Year.A => new DailyReading { FirstReading = "Acts 2:14, 22-33", SecondReading = "1 Pt 1:17-21", Gospel = "Lk 24:13-35" },
+                14 when year is Year.B => new DailyReading { FirstReading = "Acts 3:13-15, 17-19", SecondReading = "1 Jn 2:1-5a", Gospel = "Lk 24:35-48" },
+                14 when year is Year.C => new DailyReading { FirstReading = "Acts 5:27-32, 40b-41", SecondReading = "Rv 5:11-14", Gospel = "Jn 21:1-19" },
                 // Monday
                 15 => new DailyReading { FirstReading = "Acts 6:8-15", Gospel = "Jn 6:22-29" },
                 // Tuesday
@@ -917,9 +950,9 @@ namespace CatholicDailyReadings.Business
                 // Saturday
                 20 => new DailyReading { FirstReading = "Acts 9:31-42", Gospel = "Jn 6:60-69" },
                 // 4th Sunday of Easter
-                21 when year is Year.A => new DailyReading { FirstReading = "Acts 2:14a, 36-41", SecondReading = "1 Pt 2:20b-25", Gospel = "Jn 10:1-10" };
-                21 when year is Year.B => new DailyReading { FirstReading = "Acts 4:8-12", SecondReading = "1 Jn 3:1-2", Gospel = "Jn 10:11-18" };
-                21 when year is Year.C => new DailyReading { FirstReading = "Acts 13:14, 43-52", SecondReading = "Rv 7:9, 14b-17", Gospel = "Jn 10:27-30" };
+                21 when year is Year.A => new DailyReading { FirstReading = "Acts 2:14a, 36-41", SecondReading = "1 Pt 2:20b-25", Gospel = "Jn 10:1-10" },
+                21 when year is Year.B => new DailyReading { FirstReading = "Acts 4:8-12", SecondReading = "1 Jn 3:1-2", Gospel = "Jn 10:11-18" },
+                21 when year is Year.C => new DailyReading { FirstReading = "Acts 13:14, 43-52", SecondReading = "Rv 7:9, 14b-17", Gospel = "Jn 10:27-30" },
                 // Monday
                 22 when year is Year.A => new DailyReading { FirstReading = "Acts 11:1-18", Gospel = "Jn 10:11-18" },
                 22 => new DailyReading { FirstReading = "Acts 11:1-18", Gospel = "Jn 10:1-10" },                
@@ -934,9 +967,9 @@ namespace CatholicDailyReadings.Business
                 // Saturday
                 27 => new DailyReading { FirstReading = "Acts 13:44-52", Gospel = "Jn 14:7-14" },
                 // 5th Sunday of Easter
-                28 when year is Year.A => new DailyReading { FirstReading = "Acts 6:1-7", SecondReading = "1 Pt 2:4-9", Gospel = "Jn 14:1-12" };
-                28 when year is Year.B => new DailyReading { FirstReading = "Acts 9:26-31", SecondReading = "1 Jn 3:18-24", Gospel = "Jn 15:1-8" };
-                28 when year is Year.C => new DailyReading { FirstReading = "Acts 14:21-27", SecondReading = "Rv 21:1-5a", Gospel = "Jn 13:31-33a, 34-35" };
+                28 when year is Year.A => new DailyReading { FirstReading = "Acts 6:1-7", SecondReading = "1 Pt 2:4-9", Gospel = "Jn 14:1-12" },
+                28 when year is Year.B => new DailyReading { FirstReading = "Acts 9:26-31", SecondReading = "1 Jn 3:18-24", Gospel = "Jn 15:1-8" },
+                28 when year is Year.C => new DailyReading { FirstReading = "Acts 14:21-27", SecondReading = "Rv 21:1-5a", Gospel = "Jn 13:31-33a, 34-35" },
                 // Monday                
                 29 => new DailyReading { FirstReading = "Acts 14:5-18", Gospel = "Jn 14:21-26" },
                 // Tuesday
@@ -950,9 +983,9 @@ namespace CatholicDailyReadings.Business
                 // Saturday
                 34 => new DailyReading { FirstReading = "Acts 16:1-10", Gospel = "Jn 15:18-21" },
                 // 6th Sunday of Easter
-                35 when year is Year.A => new DailyReading { FirstReading = "Acts 8:5-8, 14-17", SecondReading = "1 Pt 3:15-18", Gospel = "Jn 14:15-21" };
-                35 when year is Year.B => new DailyReading { FirstReading = "Acts 10:25-26, 34-35, 44-48", SecondReading = "1 Jn 4:7-10", Gospel = "Jn 15:9-17" };
-                35 when year is Year.C => new DailyReading { FirstReading = "Acts 15:1-2, 22-29", SecondReading = "Rv 21:10-14, 22-23", Gospel = "Jn 14:23-29" };
+                35 when year is Year.A => new DailyReading { FirstReading = "Acts 8:5-8, 14-17", SecondReading = "1 Pt 3:15-18", Gospel = "Jn 14:15-21" },
+                35 when year is Year.B => new DailyReading { FirstReading = "Acts 10:25-26, 34-35, 44-48", SecondReading = "1 Jn 4:7-10", Gospel = "Jn 15:9-17" },
+                35 when year is Year.C => new DailyReading { FirstReading = "Acts 15:1-2, 22-29", SecondReading = "Rv 21:10-14, 22-23", Gospel = "Jn 14:23-29" },
                 // Monday                
                 36 => new DailyReading { FirstReading = "Acts 16:11-15", Gospel = "Jn 15:26-16:4a" },
                 // Tuesday
@@ -966,9 +999,9 @@ namespace CatholicDailyReadings.Business
                 // Saturday
                 41 => new DailyReading { FirstReading = "Acts 18:23-28", Gospel = "Jn 16:23b-28" },
                 // 7th Sunday of Easter
-                42 when year is Year.A => new DailyReading { FirstReading = "Acts 1:12-14", SecondReading = "1 Pt 4:13-16", Gospel = "Jn 17:1-11a" };
-                42 when year is Year.B => new DailyReading { FirstReading = "Acts 1:15-17, 20a, 20c-26", SecondReading = "1 Jn 4:11-16", Gospel = "Jn 17:11b-19" };
-                42 when year is Year.C => new DailyReading { FirstReading = "Acts 7:55-60", SecondReading = "Rv 22:12-14, 16-17, 20", Gospel = "Jn 17:20-26" };
+                42 when year is Year.A => new DailyReading { FirstReading = "Acts 1:12-14", SecondReading = "1 Pt 4:13-16", Gospel = "Jn 17:1-11a" },
+                42 when year is Year.B => new DailyReading { FirstReading = "Acts 1:15-17, 20a, 20c-26", SecondReading = "1 Jn 4:11-16", Gospel = "Jn 17:11b-19" },
+                42 when year is Year.C => new DailyReading { FirstReading = "Acts 7:55-60", SecondReading = "Rv 22:12-14, 16-17, 20", Gospel = "Jn 17:20-26" },
                 // Monday                
                 43 => new DailyReading { FirstReading = "Acts 19:1-8", Gospel = "Jn 16:29-33" },
                 // Tuesday
@@ -982,9 +1015,9 @@ namespace CatholicDailyReadings.Business
                 // Saturday
                 48 => new DailyReading { FirstReading = "Gn 11:1-9", SecondReading = "Rom 8:22-27", Gospel = "Jn 7:37-39" },
                 // Pentecost
-                49 when year is Year.A => new DailyReading { FirstReading = "Acts 2:1-11", SecondReading = "1 Cor 12:3b-7, 12-13", Gospel = "Jn 20:19-23" };
-                49 when year is Year.B => new DailyReading { FirstReading = "Acts 2:1-11", SecondReading = "Gal 5:16-25", Gospel = "Jn 15:26-27; 16:12-15" };
-                49 when year is Year.C => new DailyReading { FirstReading = "Acts 2:1-11", SecondReading = "Rom 8:8-17", Gospel = "Jn 14:15-16, 23b-26" };
+                49 when year is Year.A => new DailyReading { FirstReading = "Acts 2:1-11", SecondReading = "1 Cor 12:3b-7, 12-13", Gospel = "Jn 20:19-23" },
+                49 when year is Year.B => new DailyReading { FirstReading = "Acts 2:1-11", SecondReading = "Gal 5:16-25", Gospel = "Jn 15:26-27; 16:12-15" },
+                49 when year is Year.C => new DailyReading { FirstReading = "Acts 2:1-11", SecondReading = "Rom 8:8-17", Gospel = "Jn 14:15-16, 23b-26" },
                 _ => null
             };
         }
