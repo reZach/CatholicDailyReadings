@@ -75,6 +75,8 @@ namespace CatholicDailyReadings.Business
                 dailyReading = GetOrdinaryTime(date, baptismOfTheLord, ashWednesday, year, cycle);
             else if (date >= ashWednesday && date < easter.AddDays(-3)) /* from ash wednesday to before holy thursday */
                 dailyReading = GetLent(date, ashWednesday, year);
+            else if (date >= easter.AddDays(-3))
+                dailyReading = GetEaster(date, easter, year);
 
             // Populate year and cycle onto the daily reading
             if (dailyReading != null)
