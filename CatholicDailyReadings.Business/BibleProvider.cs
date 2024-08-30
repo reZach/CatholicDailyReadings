@@ -30,6 +30,7 @@ namespace CatholicDailyReadings.Business
             DateTime baptismOfTheLord = _christmasCalculator.CalculateBaptismOfTheLord(date.Year);
             DateTime ashWednesday = _moonCalculator.GetLent(date.Year);
             DateTime easter = _moonCalculator.GetEaster(date.Year);
+            DateTime pentecost = _moonCalculator.GetPentecost(date.Year);
 
             // If date falls on or after Advent, increment Year & Cycle
             if (date >= advent)
@@ -75,8 +76,10 @@ namespace CatholicDailyReadings.Business
                 dailyReading = GetOrdinaryTime(date, baptismOfTheLord, ashWednesday, year, cycle);
             else if (date >= ashWednesday && date < easter.AddDays(-3)) /* from ash wednesday to before holy thursday */
                 dailyReading = GetLent(date, ashWednesday, year);
-            else if (date >= easter.AddDays(-3))
+            else if (date >= easter.AddDays(-3) && date <= pentecost)
                 dailyReading = GetEaster(date, easter, year);
+            else
+                dailyReading = GetOrdinaryTimeAfterEaster(date, pentecost, advent, year, cycle);
 
             // Populate year and cycle onto the daily reading
             if (dailyReading != null)
@@ -1022,6 +1025,68 @@ namespace CatholicDailyReadings.Business
                 49 when year is Year.C => new DailyReading { FirstReading = "Acts 2:1-11", SecondReading = "Rom 8:8-17", Gospel = "Jn 14:15-16, 23b-26" },
                 _ => null
             };
+        }
+
+        private DailyReading? GetOrdinaryTimeAfterEaster(DateTime date, DateTime pentecost, DateTime advent, Year year, Cycle cycle)
+        {
+            // The Blessed Virgin Mary, Mother of the Church
+            if (pentecost.AddDays(1) == date)
+                return new DailyReading { FirstReading = "Gn 3:9-15, 20", Gospel = "Jn 19:25-34" };
+
+            // https://catholic-resources.org/Lectionary/Calendar.htm
+            // After Easter, _sometimes_ we skip a week of Ordinary
+            // Time. Since there's not a rhyme or reason that I can figure
+            // out how this works, we instead will calculate the 
+            // Ordinary Time readings by going backwards from the next/upcoming Advent
+
+            TimeSpan adventDifference = date.Subtract(advent);
+            int adventDayDifference = (int)adventDifference.TotalDays;
+
+            if (cycle == Cycle.One)
+            {
+
+            }
+            else if (cycle == Cycle.Two)
+            {
+                return adventDayDifference switch
+                {
+                    // Week 33 Sunday
+                    -14 when year is Year.A => new DailyReading { FirstReading = "Prv 31:10-13, 19-20, 30-31", SecondReading = "1 Thes 5:1-6", Gospel = "Mt 25:14-30" },
+                    -14 when year is Year.B => new DailyReading { FirstReading = "Dn 12:1-3", SecondReading = "Heb 10:11-14, 18", Gospel = "Mk 13:24-32" },
+                    -14 when year is Year.C => new DailyReading { FirstReading = "Mal 3:19-20a", SecondReading = "2 Thes 3:7-12", Gospel = "Lk 21:5-19" },
+                    // Monday
+                    -13 => new DailyReading { FirstReading = "Rv 1:1-4; 2:1-5", Gospel = "Lk 18:35-43" },
+                    // Tuesday
+                    -12 => new DailyReading { FirstReading = "Rv 3:1-6, 14-22", Gospel = "Lk 19:1-10" },
+                    // Wednesday
+                    -11 => new DailyReading { FirstReading = "Rv 4:1-11", Gospel = "Lk 19:11-28" },
+                    // Thursday
+                    -10 => new DailyReading { FirstReading = "Rv 5:1-10", Gospel = "Lk 19:41-44" },
+                    // Friday
+                    -9 => new DailyReading { FirstReading = "Rv 10:8-11", Gospel = "Lk 19:45-48" },
+                    // Saturday
+                    -8 => new DailyReading { FirstReading = "Rv 11:4-12", Gospel = "Lk 20:27-40" },
+                    // Week 34 Sunday
+                    -7 when year is Year.A => new DailyReading { FirstReading = "Ez 34:11-12, 15-17", SecondReading = "1 Cor 15:20-26, 28", Gospel = "Mt 25:31-46" },
+                    -7 when year is Year.B => new DailyReading { FirstReading = "Dn 7:13-14", SecondReading = "Rv 1:5-8", Gospel = "Jn 18:33b-37" },
+                    -7 when year is Year.C => new DailyReading { FirstReading = "2 Sm 5:1-3", SecondReading = "Col 1:12-20", Gospel = "Lk 23:35-43" },
+                    // Monday
+                    -6 => new DailyReading { FirstReading = "Rv 14:1-3, 4b-5", Gospel = "Lk 21:1-4" },
+                    // Tuesday
+                    -5 => new DailyReading { FirstReading = "Rv 14:14-19", Gospel = "Lk 21:5-11" },
+                    // Wednesday
+                    -4 => new DailyReading { FirstReading = "Rv 15:1-4", Gospel = "Lk 21:12-19" },
+                    // Thursday
+                    -3 => new DailyReading { FirstReading = "Rv 18:1-2, 21-23; 19:1-3, 9a", Gospel = "Lk 21:20-28" },
+                    // Friday
+                    -2 => new DailyReading { FirstReading = "Rv 20:1-4, 11—21:2", Gospel = "Lk 21:29-33" },
+                    // Saturday
+                    -1 => new DailyReading { FirstReading = "Rv 22:1-7", Gospel = "Lk 21:34-36" },
+                    _ => null
+                };
+            }
+
+            return null;
         }
     }
 }

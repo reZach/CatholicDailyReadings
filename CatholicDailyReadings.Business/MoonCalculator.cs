@@ -355,5 +355,14 @@ namespace CatholicDailyReadings.Business
             // + Saturday, Friday, Thursday, Wednesday to walk back to Ash Wednesday
             return easter.AddDays(-46);
         }
+
+        public DateTime GetPentecost(int year)
+        {
+            // Pentecost is dependent on the Easter date
+            DateTime easter = GetEaster(year);
+
+            // Pentecost is 7 weeks after Easter
+            return easter.AddDays(7 * 7);
+        }
     }
 }
