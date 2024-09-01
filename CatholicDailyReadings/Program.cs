@@ -8,23 +8,58 @@ ChristmasCalculator christmasCalculator = new ChristmasCalculator();
 AdventCalculator adventCalculator = new AdventCalculator();
 MoonCalculator moonCalculator = new MoonCalculator();
 CycleCalculator cycleCalculator = new CycleCalculator();
+BibleProvider bibleProvider = new BibleProvider();
 
 
 for (int i = 2023; i <= 2100; i++)
-{
-    DateTime pentecost = moonCalculator.GetPentecost(i);
-    DateTime easter = moonCalculator.GetEaster(i);
+{    
     DateTime advent = adventCalculator.Calculate(i);
-    TimeSpan span = advent - pentecost;
+    DateTime pentecost = moonCalculator.GetPentecost(i);
 
-    // not-skip 
-    if (i == 2035 ||
-        i == 2046 ||
-        i == 2062 ||
-        i == 2054 ||
-        i == 2073 ||
-        i == 2084)
-        Console.WriteLine($"{i} {pentecost.ToString("yyyy-MM-dd")} {span.Days}");
+    DateTime temp = new DateTime(advent.Year, advent.Month, advent.Day);
+    temp = temp.AddDays(-1);
+
+    int week = 34;
+
+    while (temp > pentecost)
+    {
+        if (temp.AddDays(1).DayOfWeek == DayOfWeek.Sunday)
+            week--;
+
+
+        if (week == 30)
+        {
+            DailyReading? r = bibleProvider.GetDailyReading(temp);
+
+            if (r != null)
+            {
+                if (r.Cycle == Cycle.Two && r.Year == Year.A && temp.DayOfWeek == DayOfWeek.Sunday
+                    && temp.Month != 11 && (temp.Day != 1 || temp.Day != 2))
+                {
+                    Console.WriteLine(temp.ToShortDateString());
+                }
+            }
+        }
+
+
+        temp = temp.AddDays(-1);
+    }
+
+    
+
+    //DateTime pentecost = moonCalculator.GetPentecost(i);
+    //DateTime easter = moonCalculator.GetEaster(i);
+    //DateTime advent = adventCalculator.Calculate(i);
+    //TimeSpan span = advent - pentecost;
+
+    //// not-skip 
+    //if (i == 2035 ||
+    //    i == 2046 ||
+    //    i == 2062 ||
+    //    i == 2054 ||
+    //    i == 2073 ||
+    //    i == 2084)
+    //    Console.WriteLine($"{i} {pentecost.ToString("yyyy-MM-dd")} {span.Days}");
 
     //// skip 
     //if (i == 2027 ||

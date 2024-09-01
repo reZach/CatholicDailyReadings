@@ -536,34 +536,9 @@ namespace CatholicDailyReadings.Business
                     // Tuesday
                     51 => new DailyReading { FirstReading = "Tb 2:9-14", Gospel = "Mk 12:13-17" },
 
-
-                    // The below probably need new numbers; we are at Lent here within the years
-                    // that have the longest ordinary time before Lent
-
-                    // Wednesday
-                    52 => new DailyReading { FirstReading = "Tb 3:1-11a, 16-17a", Gospel = "Mk 12:18-27" },
-                    // Thursday
-                    53 => new DailyReading { FirstReading = "Tb 6:10-11; 7:1bcde, 9-17; 8:4-9a", Gospel = "Mk 12:28b-34" },
-                    // Friday
-                    54 => new DailyReading { FirstReading = "Tb 11:5-17", Gospel = "Mk 12:35-37" },
-                    // Saturday
-                    55 => new DailyReading { FirstReading = "Tb 12:1, 5-15, 20", Gospel = "Mk 12:38-44" },
-                    // Week 10 Sunday
-                    56 when year is Year.A => new DailyReading { FirstReading = "Hos 6:3-6", SecondReading = "Rom 4:18-25", Gospel = "Mt 9:9-13" },
-                    56 when year is Year.B => new DailyReading { FirstReading = "Gn 3:9-15", SecondReading = "2 Cor 4:13—5:1", Gospel = "Mk 3:20-35" },
-                    56 when year is Year.C => new DailyReading { FirstReading = "1 Kgs 17:17-24", SecondReading = "Gal 1:11-19", Gospel = "Lk 7:11-17" },
-                    // Monday
-                    57 => new DailyReading { FirstReading = "2 Cor 1:1-7", Gospel = "Mt 5:1-12" },
-                    // Tuesday
-                    58 => new DailyReading { FirstReading = "2 Cor 1:18-22", Gospel = "Mt 5:13-16" },
-                    // Wednesday
-                    59 => new DailyReading { FirstReading = "2 Cor 3:4-11", Gospel = "Mt 5:17-19" },
-                    // Thursday
-                    60 => new DailyReading { FirstReading = "2 Cor 3:15—4:1, 3-6", Gospel = "Mt 5:20-26" },
-                    // Friday
-                    61 => new DailyReading { FirstReading = "2 Cor 4:7-15", Gospel = "Mt 5:27-32" },
-                    // Saturday
-                    62 => new DailyReading { FirstReading = "2 Cor 5:14-21", Gospel = "Mt 5:33-37" },
+                    // We don't need any more readings; by now, we are in Lent within the
+                    // years that have the longest Ordinary Time before Lent.
+                    // "GetOrdinaryTimeAfterEaster" will pick up the readings
                     _ => null
                 };
             }
@@ -704,34 +679,9 @@ namespace CatholicDailyReadings.Business
                     // Tuesday
                     51 => new DailyReading { FirstReading = "2 Pt 3:12-15a, 17-18", Gospel = "Mk 12:13-17" },
 
-
-                    // The below probably need new numbers; we are at Lent here within the years
-                    // that have the longest ordinary time before Lent
-
-                    // Wednesday
-                    52 => new DailyReading { FirstReading = "2 Tm 1:1-3, 6-12", Gospel = "Mk 12:18-27" },
-                    // Thursday
-                    53 => new DailyReading { FirstReading = "2 Tm 2:8-15", Gospel = "Mk 12:28b-34" },
-                    // Friday
-                    54 => new DailyReading { FirstReading = "2 Tm 3:10-17", Gospel = "Mk 12:35-37" },
-                    // Saturday
-                    55 => new DailyReading { FirstReading = "2 Tm 4:1-8", Gospel = "Mk 12:38-44" },
-                    // Week 10 Sunday
-                    56 when year is Year.A => new DailyReading { FirstReading = "Hos 6:3-6", SecondReading = "Rom 4:18-25", Gospel = "Mt 9:9-13" },
-                    56 when year is Year.B => new DailyReading { FirstReading = "Gn 3:9-15", SecondReading = "2 Cor 4:13—5:1", Gospel = "Mk 3:20-35" },
-                    56 when year is Year.C => new DailyReading { FirstReading = "1 Kgs 17:17-24", SecondReading = "Gal 1:11-19", Gospel = "Lk 7:11-17" },
-                    // Monday
-                    57 => new DailyReading { FirstReading = "1 Kgs 17:1-6", Gospel = "Mt 5:1-12" },
-                    // Tuesday
-                    58 => new DailyReading { FirstReading = "1 Kgs 17:7-16", Gospel = "Mt 5:13-16" },
-                    // Wednesday
-                    59 => new DailyReading { FirstReading = "1 Kgs 18:20-39", Gospel = "Mt 5:17-19" },
-                    // Thursday
-                    60 => new DailyReading { FirstReading = "1 Kgs 18:41-46", Gospel = "Mt 5:20-26" },
-                    // Friday
-                    61 => new DailyReading { FirstReading = "1 Kgs 19:9a, 11-16", Gospel = "Mt 5:27-32" },
-                    // Saturday
-                    62 => new DailyReading { FirstReading = "1 Kgs 19:19-21", Gospel = "Mt 5:33-37" },
+                    // We don't need any more readings; by now, we are in Lent within the
+                    // years that have the longest Ordinary Time before Lent.
+                    // "GetOrdinaryTimeAfterEaster" will pick up the readings
                     _ => null
                 };
             }
@@ -960,7 +910,7 @@ namespace CatholicDailyReadings.Business
                 21 when year is Year.C => new DailyReading { FirstReading = "Acts 13:14, 43-52", SecondReading = "Rv 7:9, 14b-17", Gospel = "Jn 10:27-30" },
                 // Monday
                 22 when year is Year.A => new DailyReading { FirstReading = "Acts 11:1-18", Gospel = "Jn 10:11-18" },
-                22 => new DailyReading { FirstReading = "Acts 11:1-18", Gospel = "Jn 10:1-10" },                
+                22 => new DailyReading { FirstReading = "Acts 11:1-18", Gospel = "Jn 10:1-10" },
                 // Tuesday
                 23 => new DailyReading { FirstReading = "Acts 11:19-26", Gospel = "Jn 10:22-30" },
                 // Wednesday
@@ -1033,6 +983,28 @@ namespace CatholicDailyReadings.Business
             if (pentecost.AddDays(1) == date)
                 return new DailyReading { FirstReading = "Gn 3:9-15, 20", Gospel = "Jn 19:25-34" };
 
+            // Transfiguration of the Lord
+            if (date.Month == 8 && date.Day == 6)
+                return year switch
+                {
+                    Year.A => new DailyReading { FirstReading = "Dn 7:9-10, 13-14", SecondReading = "2 Pt 1:16-19", Gospel = "Mt 17:1-9" },
+                    Year.B => new DailyReading { FirstReading = "Dn 7:9-10, 13-14", SecondReading = "2 Pt 1:16-19", Gospel = "Mk 9:2-10" },
+                    Year.C => new DailyReading { FirstReading = "Dn 7:9-10, 13-14", SecondReading = "2 Pt 1:16-19", Gospel = "Lk 9:28b-36" },
+                    _ => null
+                };
+
+            // Assumption of the Blessed Virgin Mary
+            if (date.Month == 8 && date.Day == 15)
+                return new DailyReading { FirstReading = "Dn 7:9-10, 13-14", SecondReading = "2 Pt 1:16-19", Gospel = "Mt 17:1-9" };
+
+            // All Saints day
+            if (date.Month == 11 && date.Day == 1)
+                return new DailyReading { FirstReading = "Rv 7:2-4, 9-14", SecondReading = "1 Jn 3:1-3", Gospel = "Mt 5:1-12a" };
+
+            // All Souls day
+            if (date.Month == 11 && date.Day == 2) 
+                return new DailyReading { FirstReading = "Wis 3:1-9", SecondReading = "Rom 5:5-11", Gospel = "Mt 11:25-30" };
+
             // https://catholic-resources.org/Lectionary/Calendar.htm
             // After Easter, _sometimes_ we skip a week of Ordinary
             // Time. Since there's not a rhyme or reason that I can figure
@@ -1044,12 +1016,805 @@ namespace CatholicDailyReadings.Business
 
             if (cycle == Cycle.One)
             {
-
+                return adventDayDifference switch
+                {
+                    // Week 9
+                    // Wednesday
+                    -179 => new DailyReading { FirstReading = "Tb 3:1-11a, 16-17a", Gospel = "Mk 12:18-27" },
+                    // Thursday
+                    -178 => new DailyReading { FirstReading = "Tb 6:10-11; 7:1bcde, 9-17; 8:4-9a", Gospel = "Mk 12:28b-34" },
+                    // Friday
+                    -177 => new DailyReading { FirstReading = "Tb 11:5-17", Gospel = "Mk 12:35-37" },
+                    // Saturday
+                    -176 => new DailyReading { FirstReading = "Tb 12:1, 5-15, 20", Gospel = "Mk 12:38-44" },
+                    // Week 10 Sunday
+                    -175 when year is Year.A => new DailyReading { FirstReading = "Hos 6:3-6", SecondReading = "Rom 4:18-25", Gospel = "Mt 9:9-13" },
+                    -175 when year is Year.B => new DailyReading { FirstReading = "Gn 3:9-15", SecondReading = "2 Cor 4:13—5:1", Gospel = "Mk 3:20-35" },
+                    -175 when year is Year.C => new DailyReading { FirstReading = "1 Kgs 17:17-24", SecondReading = "Gal 1:11-19", Gospel = "Lk 7:11-17" },
+                    // Monday                    
+                    -174 => new DailyReading { FirstReading = "2 Cor 1:1-7", Gospel = "Mt 5:1-12" },
+                    // Tuesday                    
+                    -173 => new DailyReading { FirstReading = "2 Cor 1:18-22", Gospel = "Mt 5:13-16" },
+                    // Wednesday
+                    -172 => new DailyReading { FirstReading = "2 Cor 3:4-11", Gospel = "Mt 5:17-19" },
+                    // Thursday
+                    -171 => new DailyReading { FirstReading = "2 Cor 3:15—4:1, 3-6", Gospel = "Mt 5:20-26" },
+                    // Friday
+                    -170 => new DailyReading { FirstReading = "2 Cor 4:7-15", Gospel = "Mt 5:27-32" },
+                    // Saturday
+                    -169 => new DailyReading { FirstReading = "2 Cor 5:14-21", Gospel = "Mt 5:33-37" },
+                    // Week 11 Sunday
+                    -168 when year is Year.A => new DailyReading { FirstReading = "Ex 19:2-6a", SecondReading = "Rom 5:6-11", Gospel = "Mt 9:36—10:8" },
+                    -168 when year is Year.B => new DailyReading { FirstReading = "Ez 17:22-24", SecondReading = "2 Cor 5:6-10", Gospel = "Mk 4:26-34" },
+                    -168 when year is Year.C => new DailyReading { FirstReading = "2 Sm 12:7-10, 13", SecondReading = "Gal 2:16, 19-21", Gospel = "Lk 7:36—8:3" },
+                    // Monday                    
+                    -167 => new DailyReading { FirstReading = "2 Cor 6:1-10", Gospel = "Mt 5:38-42" },
+                    // Tuesday                    
+                    -166 => new DailyReading { FirstReading = "2 Cor 8:1-9", Gospel = "Mt 5:43-48" },
+                    // Wednesday
+                    -165 => new DailyReading { FirstReading = "2 Cor 9:6-11", Gospel = "Mt 6:1-6, 16-18" },
+                    // Thursday
+                    -164 => new DailyReading { FirstReading = "2 Cor 11:1-11", Gospel = "Mt 6:7-15" },
+                    // Friday
+                    -163 => new DailyReading { FirstReading = "2 Cor 11:18, 21-30", Gospel = "Mt 6:19-23" },
+                    // Saturday
+                    -162 => new DailyReading { FirstReading = "2 Cor 12:1-10", Gospel = "Mt 6:24-34" },
+                    // Week 12 Sunday
+                    -161 when year is Year.A => new DailyReading { FirstReading = "Jer 20:10-13", SecondReading = "Rom 5:12-15", Gospel = "Mt 10:26-33" },
+                    -161 when year is Year.B => new DailyReading { FirstReading = "Jb 38:1, 8-11", SecondReading = "2 Cor 5:14-17", Gospel = "Mk 4:35-41" },
+                    -161 when year is Year.C => new DailyReading { FirstReading = "Zec 12:10-11; 13:1", SecondReading = "Gal 3:26-29", Gospel = "Lk 9:18-24" },
+                    // Monday                    
+                    -160 => new DailyReading { FirstReading = "Gn 12:1-9", Gospel = "Mt 7:1-5" },
+                    // Tuesday                    
+                    -159 => new DailyReading { FirstReading = "Gn 13:2, 5-18", Gospel = "Mt 7:6, 12-14" },
+                    // Wednesday
+                    -158 => new DailyReading { FirstReading = "Gn 15:1-12, 17-18", Gospel = "Mt 7:15-22" },
+                    // Thursday
+                    -157 => new DailyReading { FirstReading = "Gn 16:1-12, 15-16", Gospel = "Mt 7:21-29" },
+                    // Friday
+                    -156 => new DailyReading { FirstReading = "Gn 17:1, 9-10, 15-22", Gospel = "Mt 8:1-4" },
+                    // Saturday
+                    -155 => new DailyReading { FirstReading = "Gn 18:1-15", Gospel = "Mt 8:5-17" },
+                    // Week 13 Sunday
+                    -154 when year is Year.A => new DailyReading { FirstReading = "2 Kgs 4:8-11, 14-16a", SecondReading = "Rom 6:3-4, 8-11", Gospel = "Mt 10:37-42" },
+                    -154 when year is Year.B => new DailyReading { FirstReading = "Wis 1:13-15; 2:23-24", SecondReading = "2 Cor 8:7, 9, 13-15", Gospel = "Mk 5:21-43" },
+                    -154 when year is Year.C => new DailyReading { FirstReading = "1 Kgs 19:16b, 19-21", SecondReading = "Gal 5:1, 13-18", Gospel = "Lk 9:51-62" },
+                    // Monday                    
+                    -153 => new DailyReading { FirstReading = "Gn 18:16-33", Gospel = "Mt 8:18-22" },
+                    // Tuesday                    
+                    -152 => new DailyReading { FirstReading = "Gn 19:15-29", Gospel = "Mt 8:23-27" },
+                    // Wednesday
+                    -151 => new DailyReading { FirstReading = "Gn 21:5, 8-20a", Gospel = "Mt 8:28-34" },
+                    // Thursday
+                    -150 => new DailyReading { FirstReading = "Gn 22:1b-19", Gospel = "Mt 9:1-8" },
+                    // Friday
+                    -149 => new DailyReading { FirstReading = "Gn 23:1-4, 19; 24:1-8, 62-67", Gospel = "Mt 9:9-13" },
+                    // Saturday
+                    -148 => new DailyReading { FirstReading = "Gn 27:1-5, 15-29", Gospel = "Mt 9:14-17" },
+                    // Week 14 Sunday
+                    -147 when year is Year.A => new DailyReading { FirstReading = "Zec 9:9-10", SecondReading = "Rom 8:9, 11-13", Gospel = "Mt 11:25-30" },
+                    -147 when year is Year.B => new DailyReading { FirstReading = "Ez 2:2-5", SecondReading = "2 Cor 12:7-10", Gospel = "Mk 6:1-6" },
+                    -147 when year is Year.C => new DailyReading { FirstReading = "Is 66:10-14c", SecondReading = "Gal 6:14-18", Gospel = "Lk 10:1-12, 17-20" },
+                    // Monday                    
+                    -146 => new DailyReading { FirstReading = "Gn 28:10-22a", Gospel = "Mt 9:18-26" },
+                    // Tuesday                    
+                    -145 => new DailyReading { FirstReading = "Gn 32:23-33", Gospel = "Mt 9:32-38" },
+                    // Wednesday
+                    -144 => new DailyReading { FirstReading = "Gn 41:55-57; 42:5-7a, 17-24a", Gospel = "Mt 10:1-7" },
+                    // Thursday
+                    -143 => new DailyReading { FirstReading = "Gn 44:18-21, 23b-29; 45:1-5", Gospel = "Mt 10:7-15" },
+                    // Friday
+                    -142 => new DailyReading { FirstReading = "Gn 46:1-7, 28-30", Gospel = "Mt 10:16-23" },
+                    // Saturday
+                    -141 => new DailyReading { FirstReading = "Gn 49:29-32; 50:15-26a", Gospel = "Mt 10:24-33" },
+                    // Week 15 Sunday
+                    -140 when year is Year.A => new DailyReading { FirstReading = "Is 55:10-11", SecondReading = "Rom 8:18-23", Gospel = "Mt 13:1-23" },
+                    -140 when year is Year.B => new DailyReading { FirstReading = "Am 7:12-15", SecondReading = "Eph 1:3-14", Gospel = "Mk 6:7-13" },
+                    -140 when year is Year.C => new DailyReading { FirstReading = "Dt 30:10-14", SecondReading = "Col 1:15-20", Gospel = "Lk 10:25-37" },
+                    // Monday                    
+                    -139 => new DailyReading { FirstReading = "Ex 1:8-14, 22", Gospel = "Mt 10:34—11:1" },
+                    // Tuesday                    
+                    -138 => new DailyReading { FirstReading = "Ex 2:1-15a", Gospel = "Mt 11:20-24" },
+                    // Wednesday
+                    -137 => new DailyReading { FirstReading = "Ex 3:1-6, 9-12", Gospel = "Mt 11:25-27" },
+                    // Thursday
+                    -136 => new DailyReading { FirstReading = "Ex 3:13-20", Gospel = "Mt 11:28-30" },
+                    // Friday
+                    -135 => new DailyReading { FirstReading = "Ex 11:10—12:14", Gospel = "Mt 12:1-8" },
+                    // Saturday
+                    -134 => new DailyReading { FirstReading = "Ex 12:37-42", Gospel = "Mt 12:14-21" },
+                    // Week 16 Sunday
+                    -133 when year is Year.A => new DailyReading { FirstReading = "Wis 12:13, 16-19", SecondReading = "Rom 8:26-27", Gospel = "Mt 13:24-43" },
+                    -133 when year is Year.B => new DailyReading { FirstReading = "Jer 23:1-6", SecondReading = "Eph 2:13-18", Gospel = "Mk 6:30-34" },
+                    -133 when year is Year.C => new DailyReading { FirstReading = "Gn 18:1-10a", SecondReading = "Col 1:24-28", Gospel = "Lk 10:38-42" },
+                    // Monday                    
+                    -132 => new DailyReading { FirstReading = "Ex 14:5-18", Gospel = "Mt 12:38-42" },
+                    // Tuesday                    
+                    -131 => new DailyReading { FirstReading = "Ex 14:21—15:1", Gospel = "Mt 12:46-50" },
+                    // Wednesday
+                    -130 => new DailyReading { FirstReading = "Ex 16:1-5, 9-15", Gospel = "Mt 13:1-9" },
+                    // Thursday
+                    -129 => new DailyReading { FirstReading = "Ex 19:1-2, 9-11, 16-20b", Gospel = "Mt 13:10-17" },
+                    // Friday
+                    -128 => new DailyReading { FirstReading = "Ex 20:1-17", Gospel = "Mt 13:18-23" },
+                    // Saturday
+                    -127 => new DailyReading { FirstReading = "Ex 24:3-8", Gospel = "Mt 13:24-30" },
+                    // Week 17 Sunday
+                    -126 when year is Year.A => new DailyReading { FirstReading = "1 Kgs 3:5, 7-12", SecondReading = "Rom 8:28-30", Gospel = "Mt 13:44-52" },
+                    -126 when year is Year.B => new DailyReading { FirstReading = "2 Kgs 4:42-44", SecondReading = "Eph 4:1-6", Gospel = "Jn 6:1-15" },
+                    -126 when year is Year.C => new DailyReading { FirstReading = "Gn 18:20-32", SecondReading = "Col 2:12-14", Gospel = "Lk 11:1-13" },
+                    // Monday                    
+                    -125 => new DailyReading { FirstReading = "Ex 32:15-24, 30-34", Gospel = "Mt 13:31-35" },
+                    // Tuesday                    
+                    -124 => new DailyReading { FirstReading = "Ex 33:7-11; 34:5b-9, 28", Gospel = "Mt 13:36-43" },
+                    // Wednesday
+                    -123 => new DailyReading { FirstReading = "Ex 34:29-35", Gospel = "Mt 13:44-46" },
+                    // Thursday
+                    -122 => new DailyReading { FirstReading = "Ex 40:16-21, 34-38", Gospel = "Mt 13:47-53" },
+                    // Friday
+                    -121 => new DailyReading { FirstReading = "Lv 23:1, 4-11, 15-16, 27, 34b-37", Gospel = "Mt 13:54-58" },
+                    // Saturday
+                    -120 => new DailyReading { FirstReading = "Lv 25:1, 8-17", Gospel = "Mt 14:1-12" },
+                    // Week 18 Sunday
+                    -119 when year is Year.A => new DailyReading { FirstReading = "Is 55:1-3", SecondReading = "Rom 8:35, 37-39", Gospel = "Mt 14:13-21" },
+                    -119 when year is Year.B => new DailyReading { FirstReading = "Ex 16:2-4, 12-15", SecondReading = "Eph 4:17, 20-24", Gospel = "Jn 6:24-35" },
+                    -119 when year is Year.C => new DailyReading { FirstReading = "Eccl 1:2; 2:21-23", SecondReading = "Col 3:1-5, 9-11", Gospel = "Lk 12:13-21" },
+                    // Monday
+                    -118 when year is not Year.A => new DailyReading { FirstReading = "Nm 11:4b-15", Gospel = "Mt 14:13-21" },
+                    -118 when year is Year.A => new DailyReading { FirstReading = "Nm 11:4b-15", Gospel = "Mt 14:22-36" },
+                    // Tuesday
+                    -117 when year is not Year.A => new DailyReading { FirstReading = "Nm 12:1-13", Gospel = "Mt 14:22-36" },
+                    -117 when year is Year.A => new DailyReading { FirstReading = "Nm 12:1-13", Gospel = "Mt 15:1-2, 10-14" },
+                    // Wednesday
+                    -116 => new DailyReading { FirstReading = "Nm 13:1-2, 25—14:1, 26a-29a, 34-35", Gospel = "Mt 15:21-28" },
+                    // Thursday
+                    -115 => new DailyReading { FirstReading = "Nm 20:1-13", Gospel = "Mt 16:13-23" },
+                    // Friday
+                    -114 => new DailyReading { FirstReading = "Dt 4:32-40", Gospel = "Mt 16:24-28" },
+                    // Saturday
+                    -113 => new DailyReading { FirstReading = "Dt 6:4-13", Gospel = "Mt 17:14-22" },
+                    // Week 19 Sunday
+                    -112 when year is Year.A => new DailyReading { FirstReading = "1 Kgs 19:9a, 11-13a", SecondReading = "Rom 9:1-5", Gospel = "Mt 14:22-33" },
+                    -112 when year is Year.B => new DailyReading { FirstReading = "1 Kgs 19:4-8", SecondReading = "Eph 4:30—5:2", Gospel = "Jn 6:41-51" },
+                    -112 when year is Year.C => new DailyReading { FirstReading = "Wis 18:6-9", SecondReading = "Heb 11:1-2, 8-19", Gospel = "Lk 12:32-48" },
+                    // Monday
+                    -111 => new DailyReading { FirstReading = "Dt 10:12-22", Gospel = "Mt 17:22-27" },
+                    // Tuesday
+                    -110 => new DailyReading { FirstReading = "Dt 31:1-8", Gospel = "Mt 18:1-5, 10, 12-14" },
+                    // Wednesday
+                    -109 => new DailyReading { FirstReading = "Dt 34:1-12", Gospel = "Mt 18:15-22" },
+                    // Thursday
+                    -108 => new DailyReading { FirstReading = "Jos 3:7-10a, 11, 13-17", Gospel = "Mt 18:21—19:1" },
+                    // Friday
+                    -107 => new DailyReading { FirstReading = "Jos 24:1-13", Gospel = "Mt 19:3-12" },
+                    // Saturday
+                    -106 => new DailyReading { FirstReading = "Jos 24:14-29", Gospel = "Mt 19:13-15" },
+                    // Week 20 Sunday
+                    -105 when year is Year.A => new DailyReading { FirstReading = "Is 56:1, 6-7", SecondReading = "Rom 11:13-15, 29-32", Gospel = "Mt 15:21-28" },
+                    -105 when year is Year.B => new DailyReading { FirstReading = "Prv 9:1-6", SecondReading = "Eph 5:15-20", Gospel = "Jn 6:51-58" },
+                    -105 when year is Year.C => new DailyReading { FirstReading = "Jer 38:4-6, 8-10", SecondReading = "Heb 12:1-4", Gospel = "Lk 12:49-53" },
+                    // Monday
+                    -104 => new DailyReading { FirstReading = "Jgs 2:11-19", Gospel = "Mt 19:16-22" },
+                    // Tuesday
+                    -103 => new DailyReading { FirstReading = "Jgs 6:11-24a", Gospel = "Mt 19:23-30" },
+                    // Wednesday
+                    -102 => new DailyReading { FirstReading = "Jgs 9:6-15", Gospel = "Mt 20:1-16" },
+                    // Thursday
+                    -101 => new DailyReading { FirstReading = "Jgs 11:29-39a", Gospel = "Mt 22:1-14" },
+                    // Friday
+                    -100 => new DailyReading { FirstReading = "Ru 1:1, 3-6, 14b-16, 22", Gospel = "Mt 22:34-40" },
+                    // Saturday
+                    -99 => new DailyReading { FirstReading = "Ru 2:1-3, 8-11; 4:13-17", Gospel = "Mt 23:1-12" },
+                    // Week 21 Sunday
+                    -98 when year is Year.A => new DailyReading { FirstReading = "Is 22:19-23", SecondReading = "Rom 11:33-36", Gospel = "Mt 16:13-20" },
+                    -98 when year is Year.B => new DailyReading { FirstReading = "Jos 24:1-2a, 15-17, 18b", SecondReading = "Eph 5:21-32", Gospel = "Jn 6:60-69" },
+                    -98 when year is Year.C => new DailyReading { FirstReading = "Is 66:18-21", SecondReading = "Heb 12:5-7, 11-13", Gospel = "Lk 13:22-30" },
+                    // Monday
+                    -97 => new DailyReading { FirstReading = "1 Thes 1:1-5, 8b-10", Gospel = "Mt 23:13-22" },
+                    // Tuesday
+                    -96 => new DailyReading { FirstReading = "1 Thes 2:1-8", Gospel = "Mt 23:23-26" },
+                    // Wednesday
+                    -95 => new DailyReading { FirstReading = "1 Thes 2:9-13", Gospel = "Mt 23:27-32" },
+                    // Thursday
+                    -94 => new DailyReading { FirstReading = "1 Thes 3:7-13", Gospel = "Mt 24:42-51" },
+                    // Friday
+                    -93 => new DailyReading { FirstReading = "1 Thes 4:1-8", Gospel = "Mt 25:1-13" },
+                    // Saturday
+                    -92 => new DailyReading { FirstReading = "1 Thes 4:9-11", Gospel = "Mt 25:14-30" },
+                    // Week 22 Sunday
+                    -91 when year is Year.A => new DailyReading { FirstReading = "Jer 20:7-9", SecondReading = "Rom 12:1-2", Gospel = "Mt 16:21-27" },
+                    -91 when year is Year.B => new DailyReading { FirstReading = "Dt 4:1-2, 6-8", SecondReading = "Jas 1:17-18, 21b-22, 27", Gospel = "Mk 7:1-8, 14-15, 21-23" },
+                    -91 when year is Year.C => new DailyReading { FirstReading = "Sir 3:17-18, 20, 28-29", SecondReading = "Heb 12:18-19, 22-24a", Gospel = "Lk 14:1, 7-14" },
+                    // Monday
+                    -90 => new DailyReading { FirstReading = "1 Thes 4:13-18", Gospel = "Lk 4:16-30" },
+                    // Tuesday
+                    -89 => new DailyReading { FirstReading = "1 Thes 5:1-6, 9-11", Gospel = "Lk 4:31-37" },
+                    // Wednesday
+                    -88 => new DailyReading { FirstReading = "Col 1:1-8", Gospel = "Lk 4:38-44" },
+                    // Thursday
+                    -87 => new DailyReading { FirstReading = "Col 1:9-14", Gospel = "Lk 5:1-11" },
+                    // Friday
+                    -86 => new DailyReading { FirstReading = "Col 1:15-20", Gospel = "Lk 5:33-39" },
+                    // Saturday
+                    -85 => new DailyReading { FirstReading = "Col 1:21-23", Gospel = "Lk 6:1-5" },
+                    // Week 23 Sunday
+                    -84 when year is Year.A => new DailyReading { FirstReading = "Ez 33:7-9", SecondReading = "Rom 13:8-10", Gospel = "Mt 18:15-20" },
+                    -84 when year is Year.B => new DailyReading { FirstReading = "Is 35:4-7a", SecondReading = "Jas 2:1-5", Gospel = "Mk 7:31-37" },
+                    -84 when year is Year.C => new DailyReading { FirstReading = "Wis 9:13-18b", SecondReading = "Phlm 9-10, 12-17", Gospel = "Lk 14:25-33" },
+                    // Monday
+                    -83 => new DailyReading { FirstReading = "Col 1:24—2:3", Gospel = "Lk 6:6-11" },
+                    // Tuesday
+                    -82 => new DailyReading { FirstReading = "Col 2:6-15", Gospel = "Lk 6:12-19" },
+                    // Wednesday
+                    -81 => new DailyReading { FirstReading = "Col 3:1-11", Gospel = "Lk 6:20-26" },
+                    // Thursday
+                    -80 => new DailyReading { FirstReading = "Col 3:12-17", Gospel = "Lk 6:27-38" },
+                    // Friday
+                    -79 => new DailyReading { FirstReading = "1 Tm 1:1-2, 12-14", Gospel = "Lk 6:39-42" },
+                    // Saturday
+                    -78 => new DailyReading { FirstReading = "1 Tm 1:15-17", Gospel = "Lk 6:43-49" },
+                    // Week 24 Sunday
+                    -77 when year is Year.A => new DailyReading { FirstReading = "Sir 27:30—28:7", SecondReading = "Rom 14:7-9", Gospel = "Mt 18:21-35" },
+                    -77 when year is Year.B => new DailyReading { FirstReading = "Is 50:4-9a", SecondReading = "Jas 2:14-18", Gospel = "Mk 8:27-35" },
+                    -77 when year is Year.C => new DailyReading { FirstReading = "Ex 32:7-11, 13-14", SecondReading = "1 Tm 1:12-17", Gospel = "Lk 15:1-32" },
+                    // Monday
+                    -76 => new DailyReading { FirstReading = "1 Tm 2:1-8", Gospel = "Lk 7:1-10" },
+                    // Tuesday
+                    -75 => new DailyReading { FirstReading = "1 Tm 3:1-13", Gospel = "Lk 7:11-17" },
+                    // Wednesday
+                    -74 => new DailyReading { FirstReading = "1 Tm 3:14-16", Gospel = "Lk 7:31-35" },
+                    // Thursday
+                    -73 => new DailyReading { FirstReading = "1 Tm 4:12-16", Gospel = "Lk 7:36-50" },
+                    // Friday
+                    -72 => new DailyReading { FirstReading = "1 Tm 6:2c-12", Gospel = "Lk 8:1-3" },
+                    // Saturday
+                    -71 => new DailyReading { FirstReading = "1 Tm 6:13-16", Gospel = "Lk 8:4-15" },
+                    // Week 25 Sunday
+                    -70 when year is Year.A => new DailyReading { FirstReading = "Is 55:6-9", SecondReading = "Phil 1:20c-24, 27a", Gospel = "Mt 20:1-16a" },
+                    -70 when year is Year.B => new DailyReading { FirstReading = "Wis 2:12, 17-20", SecondReading = "Jas 3:16—4:3", Gospel = "Mk 9:30-37" },
+                    -70 when year is Year.C => new DailyReading { FirstReading = "Am 8:4-7", SecondReading = "1 Tm 2:1-8", Gospel = "Lk 16:1-13" },
+                    // Monday
+                    -69 => new DailyReading { FirstReading = "Ezr 1:1-6", Gospel = "Lk 8:16-18" },
+                    // Tuesday
+                    -68 => new DailyReading { FirstReading = "Ezr 6:7-8, 12b, 14-20", Gospel = "Lk 8:19-21" },
+                    // Wednesday
+                    -67 => new DailyReading { FirstReading = "Ezr 9:5-9", Gospel = "Lk 9:1-6" },
+                    // Thursday
+                    -66 => new DailyReading { FirstReading = "Hg 1:1-8", Gospel = "Lk 9:7-9" },
+                    // Friday
+                    -65 => new DailyReading { FirstReading = "Hg 2:1-9", Gospel = "Lk 9:18-22" },
+                    // Saturday
+                    -64 => new DailyReading { FirstReading = "Zec 2:5-9, 14-15a", Gospel = "Lk 9:43b-45" },
+                    // Week 26 Sunday
+                    -63 when year is Year.A => new DailyReading { FirstReading = "Ez 18:25-28", SecondReading = "Phil 2:1-11", Gospel = "Mt 21:28-32" },
+                    -63 when year is Year.B => new DailyReading { FirstReading = "Nm 11:25-29", SecondReading = "Jas 5:1-6", Gospel = "Mk 9:38-43, 45, 47-48" },
+                    -63 when year is Year.C => new DailyReading { FirstReading = "Am 6:1a, 4-7", SecondReading = "1 Tm 6:11-16", Gospel = "Lk 16:19-31" },
+                    // Monday
+                    -62 => new DailyReading { FirstReading = "Zec 8:1-8", Gospel = "Lk 9:46-50" },
+                    // Tuesday
+                    -61 => new DailyReading { FirstReading = "Zec 8:20-23", Gospel = "Lk 9:51-56" },
+                    // Wednesday
+                    -60 => new DailyReading { FirstReading = "Neh 2:1-8", Gospel = "Lk 9:57-62" },
+                    // Thursday
+                    -59 => new DailyReading { FirstReading = "Neh 8:1-4a, 5-6, 7b-12", Gospel = "Lk 10:1-12" },
+                    // Friday
+                    -58 => new DailyReading { FirstReading = "Bar 1:15-22", Gospel = "Lk 10:13-16" },
+                    // Saturday
+                    -57 => new DailyReading { FirstReading = "Bar 4:5-12, 27-29", Gospel = "Lk 10:17-24" },
+                    // Week 27 Sunday
+                    -56 when year is Year.A => new DailyReading { FirstReading = "Is 5:1-7", SecondReading = "Phil 4:6-9", Gospel = "Mt 21:33-43" },
+                    -56 when year is Year.B => new DailyReading { FirstReading = "Gn 2:18-24", SecondReading = "Heb 2:9-11", Gospel = "Mk 10:2-16" },
+                    -56 when year is Year.C => new DailyReading { FirstReading = "Hb 1:2-3; 2:2-4", SecondReading = "2 Tm 1:6-8, 13-14", Gospel = "Lk 17:5-10" },
+                    // Monday
+                    -55 => new DailyReading { FirstReading = "Jon 1:1—2:2, 11", Gospel = "Lk 10:25-37" },
+                    // Tuesday
+                    -54 => new DailyReading { FirstReading = "Jon 3:1-10", Gospel = "Lk 10:38-42" },
+                    // Wednesday
+                    -53 => new DailyReading { FirstReading = "Jon 4:1-11", Gospel = "Lk 11:1-4" },
+                    // Thursday
+                    -52 => new DailyReading { FirstReading = "Mal 3:13-20b", Gospel = "Lk 11:5-13" },
+                    // Friday
+                    -51 => new DailyReading { FirstReading = "Jl 1:13-15; 2:1-2", Gospel = "Lk 11:15-26" },
+                    // Saturday
+                    -50 => new DailyReading { FirstReading = "Jl 4:12-21", Gospel = "Lk 11:27-28" },
+                    // Week 28 Sunday
+                    -49 when year is Year.A => new DailyReading { FirstReading = "Is 25:6-10a", SecondReading = "Phil 4:12-14, 19-20", Gospel = "Mt 22:1-14" },
+                    -49 when year is Year.B => new DailyReading { FirstReading = "Wis 7:7-11", SecondReading = "Heb 4:12-13", Gospel = "Mk 10:17-30" },
+                    -49 when year is Year.C => new DailyReading { FirstReading = "2 Kgs 5:14-17", SecondReading = "2 Tm 2:8-13", Gospel = "Lk 17:11-19" },
+                    // Monday
+                    -48 => new DailyReading { FirstReading = "Rom 1:1-7", Gospel = "Lk 11:29-32" },
+                    // Tuesday
+                    -47 => new DailyReading { FirstReading = "Rom 1:16-25", Gospel = "Lk 11:37-41" },
+                    // Wednesday
+                    -46 => new DailyReading { FirstReading = "Rom 2:1-11", Gospel = "Lk 11:42-46" },
+                    // Thursday
+                    -45 => new DailyReading { FirstReading = "Rom 3:21-30", Gospel = "Lk 11:47-54" },
+                    // Friday
+                    -44 => new DailyReading { FirstReading = "Rom 4:1-8", Gospel = "Lk 12:1-7" },
+                    // Saturday
+                    -43 => new DailyReading { FirstReading = "Rom 4:13, 16-18", Gospel = "Lk 12:8-12" },
+                    // Week 29 Sunday
+                    -42 when year is Year.A => new DailyReading { FirstReading = "Is 45:1, 4-6", SecondReading = "1 Thes 1:1-5b", Gospel = "Mt 22:15-21" },
+                    -42 when year is Year.B => new DailyReading { FirstReading = "Is 53:10-11", SecondReading = "Heb 4:14-16", Gospel = "Mk 10:35-45" },
+                    -42 when year is Year.C => new DailyReading { FirstReading = "Ex 17:8-13", SecondReading = "2 Tm 3:14—4:2", Gospel = "Lk 18:1-8" },
+                    // Monday
+                    -41 => new DailyReading { FirstReading = "Rom 4:20-25", Gospel = "Lk 12:13-21" },
+                    // Tuesday
+                    -40 => new DailyReading { FirstReading = "Rom 5:12, 15b, 17-19, 20b-21", Gospel = "Lk 12:35-38" },
+                    // Wednesday
+                    -39 => new DailyReading { FirstReading = "Rom 6:12-18", Gospel = "Lk 12:39-48" },
+                    // Thursday
+                    -38 => new DailyReading { FirstReading = "Rom 6:19-23", Gospel = "Lk 12:49-53" },
+                    // Friday
+                    -37 => new DailyReading { FirstReading = "Rom 7:18-25a", Gospel = "Lk 12:54-59" },
+                    // Saturday
+                    -36 => new DailyReading { FirstReading = "Rom 8:1-11", Gospel = "Lk 13:1-9" },
+                    // Week 30 Sunday
+                    -35 when year is Year.A => new DailyReading { FirstReading = "Ex 22:20-26", SecondReading = "1 Thes 1:5c-10", Gospel = "Mt 22:34-40" },
+                    -35 when year is Year.B => new DailyReading { FirstReading = "Jer 31:7-9", SecondReading = "Heb 5:1-6", Gospel = "Mk 10:46-52" },
+                    -35 when year is Year.C => new DailyReading { FirstReading = "Sir 35:12-14, 16-18", SecondReading = "2 Tm 4:6-8, 16-18", Gospel = "Lk 18:9-14" },
+                    // Monday
+                    -34 => new DailyReading { FirstReading = "Rom 8:12-17", Gospel = "Lk 13:10-17" },
+                    // Tuesday
+                    -33 => new DailyReading { FirstReading = "Rom 8:18-25", Gospel = "Lk 13:18-21" },
+                    // Wednesday
+                    -32 => new DailyReading { FirstReading = "Rom 8:26-30", Gospel = "Lk 13:22-30" },
+                    // Thursday
+                    -31 => new DailyReading { FirstReading = "Rom 8:31b-39", Gospel = "Lk 13:31-35" },
+                    // Friday
+                    -30 => new DailyReading { FirstReading = "Rom 9:1-5", Gospel = "Lk 14:1-6" },
+                    // Saturday
+                    -29 => new DailyReading { FirstReading = "Rom 11:1-2a, 11-12, 25-29", Gospel = "Lk 14:1, 7-11" },
+                    // Week 31 Sunday
+                    -28 when year is Year.A => new DailyReading { FirstReading = "Mal 1:14b—2:2b, 8-10", SecondReading = "1 Thes 2:7b-9, 13", Gospel = "Mt 23:1-12" },
+                    -28 when year is Year.B => new DailyReading { FirstReading = "Dt 6:2-6", SecondReading = "Heb 7:23-28", Gospel = "Mk 12:28b-34" },
+                    -28 when year is Year.C => new DailyReading { FirstReading = "Wis 11:22—12:2", SecondReading = "2 Thes 1:11—2:2", Gospel = "Lk 19:1-10" },
+                    // Monday
+                    -27 => new DailyReading { FirstReading = "Rom 11:29-36", Gospel = "Lk 14:12-14" },
+                    // Tuesday
+                    -26 => new DailyReading { FirstReading = "Rom 12:5-16ab", Gospel = "Lk 14:15-24" },
+                    // Wednesday
+                    -25 => new DailyReading { FirstReading = "Rom 13:8-10", Gospel = "Lk 14:25-33" },
+                    // Thursday
+                    -24 => new DailyReading { FirstReading = "Rom 14:7-12", Gospel = "Lk 15:1-10" },
+                    // Friday
+                    -23 => new DailyReading { FirstReading = "Rom 15:14-21", Gospel = "Lk 16:1-8" },
+                    // Saturday
+                    -22 => new DailyReading { FirstReading = "Rom 16:3-9, 16, 22-27", Gospel = "Lk 16:9-15" },
+                    // Week 32 Sunday
+                    -21 when year is Year.A => new DailyReading { FirstReading = "Wis 6:12-16", SecondReading = "1 Thes 4:13-18", Gospel = "Mt 25:1-13" },
+                    -21 when year is Year.B => new DailyReading { FirstReading = "1 Kgs 17:10-16", SecondReading = "Heb 9:24-28", Gospel = "Mk 12:38-44" },
+                    -21 when year is Year.C => new DailyReading { FirstReading = "2 Mc 7:1-2, 9-14", SecondReading = "2 Thes 2:16—3:5", Gospel = "Lk 20:27-38" },
+                    // Monday
+                    -20 => new DailyReading { FirstReading = "Wis 1:1-7", Gospel = "Lk 17:1-6" },
+                    // Tuesday
+                    -19 => new DailyReading { FirstReading = "Wis 2:23—3:9", Gospel = "Lk 17:7-10" },
+                    // Wednesday
+                    -18 => new DailyReading { FirstReading = "Wis 6:1-11", Gospel = "Lk 17:11-19" },
+                    // Thursday
+                    -17 => new DailyReading { FirstReading = "Wis 7:22b—8:1", Gospel = "Lk 17:20-25" },
+                    // Friday
+                    -16 => new DailyReading { FirstReading = "Wis 13:1-9", Gospel = "Lk 17:26-37" },
+                    // Saturday
+                    -15 => new DailyReading { FirstReading = "Wis 18:14-16; 19:6-9", Gospel = "Lk 18:1-8" },
+                    // Week 33 Sunday
+                    -14 when year is Year.A => new DailyReading { FirstReading = "Prv 31:10-13, 19-20, 30-31", SecondReading = "1 Thes 5:1-6", Gospel = "Mt 25:14-30" },
+                    -14 when year is Year.B => new DailyReading { FirstReading = "Dn 12:1-3", SecondReading = "Heb 10:11-14, 18", Gospel = "Mk 13:24-32" },
+                    -14 when year is Year.C => new DailyReading { FirstReading = "Mal 3:19-20a", SecondReading = "2 Thes 3:7-12", Gospel = "Lk 21:5-19" },
+                    // Monday
+                    -13 => new DailyReading { FirstReading = "1 Mc 1:10-15, 41-43, 54-57, 62-63", Gospel = "Lk 18:35-43" },
+                    // Tuesday
+                    -12 => new DailyReading { FirstReading = "2 Mc 6:18-31", Gospel = "Lk 19:1-10" },
+                    // Wednesday
+                    -11 => new DailyReading { FirstReading = "2 Mc 7:1, 20-31", Gospel = "Lk 19:11-28" },
+                    // Thursday
+                    -10 => new DailyReading { FirstReading = "1 Mc 2:15-29", Gospel = "Lk 19:41-44" },
+                    // Friday
+                    -9 => new DailyReading { FirstReading = "1 Mc 4:36-37, 52-59", Gospel = "Lk 19:45-48" },
+                    // Saturday
+                    -8 => new DailyReading { FirstReading = "1 Mc 6:1-13", Gospel = "Lk 20:27-40" },
+                    // Week 34 Sunday
+                    -7 when year is Year.A => new DailyReading { FirstReading = "Ez 34:11-12, 15-17", SecondReading = "1 Cor 15:20-26, 28", Gospel = "Mt 25:31-46" },
+                    -7 when year is Year.B => new DailyReading { FirstReading = "Dn 7:13-14", SecondReading = "Rv 1:5-8", Gospel = "Jn 18:33b-37" },
+                    -7 when year is Year.C => new DailyReading { FirstReading = "2 Sm 5:1-3", SecondReading = "Col 1:12-20", Gospel = "Lk 23:35-43" },
+                    // Monday
+                    -6 => new DailyReading { FirstReading = "Dn 1:1-6, 8-20", Gospel = "Lk 21:1-4" },
+                    // Tuesday
+                    -5 => new DailyReading { FirstReading = "Dn 2:31-45", Gospel = "Lk 21:5-11" },
+                    // Wednesday
+                    -4 => new DailyReading { FirstReading = "Dn 5:1-6, 13-14, 16-17, 23-28", Gospel = "Lk 21:12-19" },
+                    // Thursday
+                    -3 => new DailyReading { FirstReading = "Dn 6:12-28", Gospel = "Lk 21:20-28" },
+                    // Friday
+                    -2 => new DailyReading { FirstReading = "Dn 7:2-14", Gospel = "Lk 21:29-33" },
+                    // Saturday
+                    -1 => new DailyReading { FirstReading = "Dn 7:15-27", Gospel = "Lk 21:34-36" },
+                    _ => null
+                };
             }
             else if (cycle == Cycle.Two)
             {
                 return adventDayDifference switch
                 {
+                    // Week 9
+                    // Wednesday
+                    -179 => new DailyReading { FirstReading = "2 Tm 1:1-3, 6-12", Gospel = "Mk 12:18-27" },
+                    // Thursday
+                    -178 => new DailyReading { FirstReading = "2 Tm 2:8-15", Gospel = "Mk 12:28b-34" },
+                    // Friday
+                    -177 => new DailyReading { FirstReading = "2 Tm 3:10-17", Gospel = "Mk 12:35-37" },
+                    // Saturday
+                    -176 => new DailyReading { FirstReading = "2 Tm 4:1-8", Gospel = "Mk 12:38-44" },
+                    // Week 10 Sunday
+                    -175 when year is Year.A => new DailyReading { FirstReading = "Hos 6:3-6", SecondReading = "Rom 4:18-25", Gospel = "Mt 9:9-13" },
+                    -175 when year is Year.B => new DailyReading { FirstReading = "Gn 3:9-15", SecondReading = "2 Cor 4:13—5:1", Gospel = "Mk 3:20-35" },
+                    -175 when year is Year.C => new DailyReading { FirstReading = "1 Kgs 17:17-24", SecondReading = "Gal 1:11-19", Gospel = "Lk 7:11-17" },
+                    // Monday                    
+                    -174 => new DailyReading { FirstReading = "1 Kgs 17:1-6", Gospel = "Mt 5:1-12" },
+                    // Tuesday                    
+                    -173 => new DailyReading { FirstReading = "1 Kgs 17:7-16", Gospel = "Mt 5:13-16" },
+                    // Wednesday
+                    -172 => new DailyReading { FirstReading = "1 Kgs 18:20-39", Gospel = "Mt 5:17-19" },
+                    // Thursday
+                    -171 => new DailyReading { FirstReading = "1 Kgs 18:41-46", Gospel = "Mt 5:20-26" },
+                    // Friday
+                    -170 => new DailyReading { FirstReading = "1 Kgs 19:9a, 11-16", Gospel = "Mt 5:27-32" },
+                    // Saturday
+                    -169 => new DailyReading { FirstReading = "1 Kgs 19:19-21", Gospel = "Mt 5:33-37" },
+                    // Week 11 Sunday
+                    -168 when year is Year.A => new DailyReading { FirstReading = "Ex 19:2-6a", SecondReading = "Rom 5:6-11", Gospel = "Mt 9:36—10:8" },
+                    -168 when year is Year.B => new DailyReading { FirstReading = "Ez 17:22-24", SecondReading = "2 Cor 5:6-10", Gospel = "Mk 4:26-34" },
+                    -168 when year is Year.C => new DailyReading { FirstReading = "2 Sm 12:7-10, 13", SecondReading = "Gal 2:16, 19-21", Gospel = "Lk 7:36—8:3" },
+                    // Monday                    
+                    -167 => new DailyReading { FirstReading = "1 Kgs 21:1-16", Gospel = "Mt 5:38-42" },
+                    // Tuesday                    
+                    -166 => new DailyReading { FirstReading = "1 Kgs 21:17-29", Gospel = "Mt 5:43-48" },
+                    // Wednesday
+                    -165 => new DailyReading { FirstReading = "2 Kgs 2:1, 6-14", Gospel = "Mt 6:1-6, 16-18" },
+                    // Thursday
+                    -164 => new DailyReading { FirstReading = "Sir 48:1-14", Gospel = "Mt 6:7-15" },
+                    // Friday
+                    -163 => new DailyReading { FirstReading = "2 Kgs 11:1-4, 9-18, 20", Gospel = "Mt 6:19-23" },
+                    // Saturday
+                    -162 => new DailyReading { FirstReading = "2 Chr 24:17-25", Gospel = "Mt 6:24-34" },
+                    // Week 12 Sunday
+                    -161 when year is Year.A => new DailyReading { FirstReading = "Jer 20:10-13", SecondReading = "Rom 5:12-15", Gospel = "Mt 10:26-33" },
+                    -161 when year is Year.B => new DailyReading { FirstReading = "Jb 38:1, 8-11", SecondReading = "2 Cor 5:14-17", Gospel = "Mk 4:35-41" },
+                    -161 when year is Year.C => new DailyReading { FirstReading = "Zec 12:10-11; 13:1", SecondReading = "Gal 3:26-29", Gospel = "Lk 9:18-24" },
+                    // Monday                    
+                    -160 => new DailyReading { FirstReading = "2 Kgs 17:5-8, 13-15a, 18", Gospel = "Mt 7:1-5" },
+                    // Tuesday                    
+                    -159 => new DailyReading { FirstReading = "2 Kgs 19:9b-11, 14-21, 31-35a, 36", Gospel = "Mt 7:6, 12-14" },
+                    // Wednesday
+                    -158 => new DailyReading { FirstReading = "2 Kgs 22:8-13; 23:1-3", Gospel = "Mt 7:15-22" },
+                    // Thursday
+                    -157 => new DailyReading { FirstReading = "2 Kgs 24:8-17", Gospel = "Mt 7:21-29" },
+                    // Friday
+                    -156 => new DailyReading { FirstReading = "2 Kgs 25:1-12", Gospel = "Mt 8:1-4" },
+                    // Saturday
+                    -155 => new DailyReading { FirstReading = "Lam 2:2, 10-14, 18-19", Gospel = "Mt 8:5-17" },
+                    // Week 13 Sunday
+                    -154 when year is Year.A => new DailyReading { FirstReading = "2 Kgs 4:8-11, 14-16a", SecondReading = "Rom 6:3-4, 8-11", Gospel = "Mt 10:37-42" },
+                    -154 when year is Year.B => new DailyReading { FirstReading = "Wis 1:13-15; 2:23-24", SecondReading = "2 Cor 8:7, 9, 13-15", Gospel = "Mk 5:21-43" },
+                    -154 when year is Year.C => new DailyReading { FirstReading = "1 Kgs 19:16b, 19-21", SecondReading = "Gal 5:1, 13-18", Gospel = "Lk 9:51-62" },
+                    // Monday                    
+                    -153 => new DailyReading { FirstReading = "Am 2:6-10, 13-16", Gospel = "Mt 8:18-22" },
+                    // Tuesday                    
+                    -152 => new DailyReading { FirstReading = "Am 3:1-8; 4:11-12", Gospel = "Mt 8:23-27" },
+                    // Wednesday
+                    -151 => new DailyReading { FirstReading = "Am 5:14-15, 21-24", Gospel = "Mt 8:28-34" },
+                    // Thursday
+                    -150 => new DailyReading { FirstReading = "Am 7:10-17", Gospel = "Mt 9:1-8" },
+                    // Friday
+                    -149 => new DailyReading { FirstReading = "Am 8:4-6, 9-12", Gospel = "Mt 9:9-13" },
+                    // Saturday
+                    -148 => new DailyReading { FirstReading = "Am 9:11-15", Gospel = "Mt 9:14-17" },
+                    // Week 14 Sunday
+                    -147 when year is Year.A => new DailyReading { FirstReading = "Zec 9:9-10", SecondReading = "Rom 8:9, 11-13", Gospel = "Mt 11:25-30" },
+                    -147 when year is Year.B => new DailyReading { FirstReading = "Ez 2:2-5", SecondReading = "2 Cor 12:7-10", Gospel = "Mk 6:1-6" },
+                    -147 when year is Year.C => new DailyReading { FirstReading = "Is 66:10-14c", SecondReading = "Gal 6:14-18", Gospel = "Lk 10:1-12, 17-20" },
+                    // Monday                    
+                    -146 => new DailyReading { FirstReading = "Hos 2:16, 17c-18, 21-22", Gospel = "Mt 9:18-26" },
+                    // Tuesday                    
+                    -145 => new DailyReading { FirstReading = "Hos 8:4-7, 11-13", Gospel = "Mt 9:32-38" },
+                    // Wednesday
+                    -144 => new DailyReading { FirstReading = "Hos 10:1-3, 7-8, 12", Gospel = "Mt 10:1-7" },
+                    // Thursday
+                    -143 => new DailyReading { FirstReading = "Hos 11:1-4, 8e-9", Gospel = "Mt 10:7-15" },
+                    // Friday
+                    -142 => new DailyReading { FirstReading = "Hos 14:2-10", Gospel = "Mt 10:16-23" },
+                    // Saturday
+                    -141 => new DailyReading { FirstReading = "Is 6:1-8", Gospel = "Mt 10:24-33" },
+                    // Week 15 Sunday
+                    -140 when year is Year.A => new DailyReading { FirstReading = "Is 55:10-11", SecondReading = "Rom 8:18-23", Gospel = "Mt 13:1-23" },
+                    -140 when year is Year.B => new DailyReading { FirstReading = "Am 7:12-15", SecondReading = "Eph 1:3-14", Gospel = "Mk 6:7-13" },
+                    -140 when year is Year.C => new DailyReading { FirstReading = "Dt 30:10-14", SecondReading = "Col 1:15-20", Gospel = "Lk 10:25-37" },
+                    // Monday                    
+                    -139 => new DailyReading { FirstReading = "Is 1:10-17", Gospel = "Mt 10:34—11:1" },
+                    // Tuesday                    
+                    -138 => new DailyReading { FirstReading = "Is 7:1-9", Gospel = "Mt 11:20-24" },
+                    // Wednesday
+                    -137 => new DailyReading { FirstReading = "Is 10:5-7, 13b-16", Gospel = "Mt 11:25-27" },
+                    // Thursday
+                    -136 => new DailyReading { FirstReading = "Is 26:7-9, 12, 16-19", Gospel = "Mt 11:28-30" },
+                    // Friday
+                    -135 => new DailyReading { FirstReading = "Is 38:1-6, 21-22, 7-8", Gospel = "Mt 12:1-8" },
+                    // Saturday
+                    -134 => new DailyReading { FirstReading = "Mi 2:1-5", Gospel = "Mt 12:14-21" },
+                    // Week 16 Sunday
+                    -133 when year is Year.A => new DailyReading { FirstReading = "Wis 12:13, 16-19", SecondReading = "Rom 8:26-27", Gospel = "Mt 13:24-43" },
+                    -133 when year is Year.B => new DailyReading { FirstReading = "Jer 23:1-6", SecondReading = "Eph 2:13-18", Gospel = "Mk 6:30-34" },
+                    -133 when year is Year.C => new DailyReading { FirstReading = "Gn 18:1-10a", SecondReading = "Col 1:24-28", Gospel = "Lk 10:38-42" },
+                    // Monday                    
+                    -132 => new DailyReading { FirstReading = "Mi 6:1-4, 6-8", Gospel = "Mt 12:38-42" },
+                    // Tuesday                    
+                    -131 => new DailyReading { FirstReading = "Mi 7:14-15, 18-22", Gospel = "Mt 12:46-50" },
+                    // Wednesday
+                    -130 => new DailyReading { FirstReading = "Jer 1:1, 4-10", Gospel = "Mt 13:1-9" },
+                    // Thursday
+                    -129 => new DailyReading { FirstReading = "Jer 2:1-3, 7-8, 12-13", Gospel = "Mt 13:10-17" },
+                    // Friday
+                    -128 => new DailyReading { FirstReading = "Jer 3:14-17", Gospel = "Mt 13:18-23" },
+                    // Saturday
+                    -127 => new DailyReading { FirstReading = "Jer 7:1-11", Gospel = "Mt 13:24-30" },
+                    // Week 17 Sunday
+                    -126 when year is Year.A => new DailyReading { FirstReading = "1 Kgs 3:5, 7-12", SecondReading = "Rom 8:28-30", Gospel = "Mt 13:44-52" },
+                    -126 when year is Year.B => new DailyReading { FirstReading = "2 Kgs 4:42-44", SecondReading = "Eph 4:1-6", Gospel = "Jn 6:1-15" },
+                    -126 when year is Year.C => new DailyReading { FirstReading = "Gn 18:20-32", SecondReading = "Col 2:12-14", Gospel = "Lk 11:1-13" },
+                    // Monday                    
+                    -125 => new DailyReading { FirstReading = "Jer 13:1-11", Gospel = "Mt 13:31-35" },
+                    // Tuesday                    
+                    -124 => new DailyReading { FirstReading = "Jer 14:17-22", Gospel = "Mt 13:36-43" },
+                    // Wednesday
+                    -123 => new DailyReading { FirstReading = "Jer 15:10, 16-21", Gospel = "Mt 13:44-46" },
+                    // Thursday
+                    -122 => new DailyReading { FirstReading = "Jer 18:1-6", Gospel = "Mt 13:47-53" },
+                    // Friday
+                    -121 => new DailyReading { FirstReading = "Jer 26:1-9", Gospel = "Mt 13:54-58" },
+                    // Saturday
+                    -120 => new DailyReading { FirstReading = "Jer 26:11-16, 24", Gospel = "Mt 14:1-12" },
+                    // Week 18 Sunday
+                    -119 when year is Year.A => new DailyReading { FirstReading = "Is 55:1-3", SecondReading = "Rom 8:35, 37-39", Gospel = "Mt 14:13-21" },
+                    -119 when year is Year.B => new DailyReading { FirstReading = "Ex 16:2-4, 12-15", SecondReading = "Eph 4:17, 20-24", Gospel = "Jn 6:24-35" },
+                    -119 when year is Year.C => new DailyReading { FirstReading = "Eccl 1:2; 2:21-23", SecondReading = "Col 3:1-5, 9-11", Gospel = "Lk 12:13-21" },
+                    // Monday
+                    -118 when year is not Year.A => new DailyReading { FirstReading = "Jer 28:1-17", Gospel = "Mt 14:13-21" },
+                    -118 when year is Year.A => new DailyReading { FirstReading = "Jer 28:1-17", Gospel = "Mt 14:22-36" },
+                    // Tuesday
+                    -117 when year is not Year.A => new DailyReading { FirstReading = "Jer 30:1-2, 12-15, 18-22", Gospel = "Mt 14:22-36" },
+                    -117 when year is Year.A => new DailyReading { FirstReading = "Jer 30:1-2, 12-15, 18-22", Gospel = "Mt 15:1-2, 10-14" },
+                    // Wednesday
+                    -116 => new DailyReading { FirstReading = "Jer 31:1-7", Gospel = "Mt 15:21-28" },
+                    // Thursday
+                    -115 => new DailyReading { FirstReading = "Jer 31:31-34", Gospel = "Mt 16:13-23" },
+                    // Friday
+                    -114 => new DailyReading { FirstReading = "Na 2:1, 3; 3:1-3, 6-7", Gospel = "Mt 16:24-28" },
+                    // Saturday
+                    -113 => new DailyReading { FirstReading = "Hb 1:12—2:4", Gospel = "Mt 17:14-22" },
+                    // Week 19 Sunday
+                    -112 when year is Year.A => new DailyReading { FirstReading = "1 Kgs 19:9a, 11-13a", SecondReading = "Rom 9:1-5", Gospel = "Mt 14:22-33" },
+                    -112 when year is Year.B => new DailyReading { FirstReading = "1 Kgs 19:4-8", SecondReading = "Eph 4:30—5:2", Gospel = "Jn 6:41-51" },
+                    -112 when year is Year.C => new DailyReading { FirstReading = "Wis 18:6-9", SecondReading = "Heb 11:1-2, 8-19", Gospel = "Lk 12:32-48" },
+                    // Monday
+                    -111 => new DailyReading { FirstReading = "Ez 1:2-5, 24-28c", Gospel = "Mt 17:22-27" },
+                    // Tuesday
+                    -110 => new DailyReading { FirstReading = "Ez 2:8—3:4", Gospel = "Mt 18:1-5, 10, 12-14" },
+                    // Wednesday
+                    -109 => new DailyReading { FirstReading = "Ez 9:1-7; 10:18-22", Gospel = "Mt 18:15-22" },
+                    // Thursday
+                    -108 => new DailyReading { FirstReading = "Ez 12:1-12", Gospel = "Mt 18:21—19:1" },
+                    // Friday
+                    -107 => new DailyReading { FirstReading = "Ez 16:1-15, 60, 63", Gospel = "Mt 19:3-12" },
+                    // Saturday
+                    -106 => new DailyReading { FirstReading = "Ez 18:1-10, 13b, 30-32", Gospel = "Mt 19:13-15" },
+                    // Week 20 Sunday
+                    -105 when year is Year.A => new DailyReading { FirstReading = "Is 56:1, 6-7", SecondReading = "Rom 11:13-15, 29-32", Gospel = "Mt 15:21-28" },
+                    -105 when year is Year.B => new DailyReading { FirstReading = "Prv 9:1-6", SecondReading = "Eph 5:15-20", Gospel = "Jn 6:51-58" },
+                    -105 when year is Year.C => new DailyReading { FirstReading = "Jer 38:4-6, 8-10", SecondReading = "Heb 12:1-4", Gospel = "Lk 12:49-53" },
+                    // Monday
+                    -104 => new DailyReading { FirstReading = "Ez 24:15-23", Gospel = "Mt 19:16-22" },
+                    // Tuesday
+                    -103 => new DailyReading { FirstReading = "Ez 28:1-10", Gospel = "Mt 19:23-30" },
+                    // Wednesday
+                    -102 => new DailyReading { FirstReading = "Ez 34:1-11", Gospel = "Mt 20:1-16" },
+                    // Thursday
+                    -101 => new DailyReading { FirstReading = "Ez 36:23-28", Gospel = "Mt 22:1-14" },
+                    // Friday
+                    -100 => new DailyReading { FirstReading = "Ez 37:1-14", Gospel = "Mt 22:34-40" },
+                    // Saturday
+                    -99 => new DailyReading { FirstReading = "Ez 43:1-7ab", Gospel = "Mt 23:1-12" },
+                    // Week 21 Sunday
+                    -98 when year is Year.A => new DailyReading { FirstReading = "Is 22:19-23", SecondReading = "Rom 11:33-36", Gospel = "Mt 16:13-20" },
+                    -98 when year is Year.B => new DailyReading { FirstReading = "Jos 24:1-2a, 15-17, 18b", SecondReading = "Eph 5:21-32", Gospel = "Jn 6:60-69" },
+                    -98 when year is Year.C => new DailyReading { FirstReading = "Is 66:18-21", SecondReading = "Heb 12:5-7, 11-13", Gospel = "Lk 13:22-30" },
+                    // Monday
+                    -97 => new DailyReading { FirstReading = "2 Thes 1:1-5, 11-12", Gospel = "Mt 23:13-22" },
+                    // Tuesday
+                    -96 => new DailyReading { FirstReading = "2 Thes 2:1-3a, 14-17", Gospel = "Mt 23:23-26" },
+                    // Wednesday
+                    -95 => new DailyReading { FirstReading = "2 Thes 3:6-10, 16-18", Gospel = "Mt 23:27-32" },
+                    // Thursday
+                    -94 => new DailyReading { FirstReading = "1 Cor 1:1-9", Gospel = "Mt 24:42-51" },
+                    // Friday
+                    -93 => new DailyReading { FirstReading = "1 Cor 1:17-25", Gospel = "Mt 25:1-13" },
+                    // Saturday
+                    -92 => new DailyReading { FirstReading = "1 Cor 1:26-31", Gospel = "Mt 25:14-30" },
+                    // Week 22 Sunday
+                    -91 when year is Year.A => new DailyReading { FirstReading = "Jer 20:7-9", SecondReading = "Rom 12:1-2", Gospel = "Mt 16:21-27" },
+                    -91 when year is Year.B => new DailyReading { FirstReading = "Dt 4:1-2, 6-8", SecondReading = "Jas 1:17-18, 21b-22, 27", Gospel = "Mk 7:1-8, 14-15, 21-23" },
+                    -91 when year is Year.C => new DailyReading { FirstReading = "Sir 3:17-18, 20, 28-29", SecondReading = "Heb 12:18-19, 22-24a", Gospel = "Lk 14:1, 7-14" },
+                    // Monday
+                    -90 => new DailyReading { FirstReading = "1 Cor 2:1-5", Gospel = "Lk 4:16-30" },
+                    // Tuesday
+                    -89 => new DailyReading { FirstReading = "1 Cor 2:10b-16", Gospel = "Lk 4:31-37" },
+                    // Wednesday
+                    -88 => new DailyReading { FirstReading = "1 Cor 3:1-9", Gospel = "Lk 4:38-44" },
+                    // Thursday
+                    -87 => new DailyReading { FirstReading = "1 Cor 3:18-23", Gospel = "Lk 5:1-11" },
+                    // Friday
+                    -86 => new DailyReading { FirstReading = "1 Cor 4:1-5", Gospel = "Lk 5:33-39" },
+                    // Saturday
+                    -85 => new DailyReading { FirstReading = "1 Cor 4:6b-15", Gospel = "Lk 6:1-5" },
+                    // Week 23 Sunday
+                    -84 when year is Year.A => new DailyReading { FirstReading = "Ez 33:7-9", SecondReading = "Rom 13:8-10", Gospel = "Mt 18:15-20" },
+                    -84 when year is Year.B => new DailyReading { FirstReading = "Is 35:4-7a", SecondReading = "Jas 2:1-5", Gospel = "Mk 7:31-37" },
+                    -84 when year is Year.C => new DailyReading { FirstReading = "Wis 9:13-18b", SecondReading = "Phlm 9-10, 12-17", Gospel = "Lk 14:25-33" },
+                    // Monday
+                    -83 => new DailyReading { FirstReading = "1 Cor 5:1-8", Gospel = "Lk 6:6-11" },
+                    // Tuesday
+                    -82 => new DailyReading { FirstReading = "1 Cor 6:1-11", Gospel = "Lk 6:12-19" },
+                    // Wednesday
+                    -81 => new DailyReading { FirstReading = "1 Cor 7:25-31", Gospel = "Lk 6:20-26" },
+                    // Thursday
+                    -80 => new DailyReading { FirstReading = "1 Cor 8:1b-7, 11-13", Gospel = "Lk 6:27-38" },
+                    // Friday
+                    -79 => new DailyReading { FirstReading = "1 Cor 9:16-19, 22b-27", Gospel = "Lk 6:39-42" },
+                    // Saturday
+                    -78 => new DailyReading { FirstReading = "1 Cor 10:14-22", Gospel = "Lk 6:43-49" },
+                    // Week 24 Sunday
+                    -77 when year is Year.A => new DailyReading { FirstReading = "Sir 27:30—28:7", SecondReading = "Rom 14:7-9", Gospel = "Mt 18:21-35" },
+                    -77 when year is Year.B => new DailyReading { FirstReading = "Is 50:4-9a", SecondReading = "Jas 2:14-18", Gospel = "Mk 8:27-35" },
+                    -77 when year is Year.C => new DailyReading { FirstReading = "Ex 32:7-11, 13-14", SecondReading = "1 Tm 1:12-17", Gospel = "Lk 15:1-32" },
+                    // Monday
+                    -76 => new DailyReading { FirstReading = "1 Cor 11:17-26, 33", Gospel = "Lk 7:1-10" },
+                    // Tuesday
+                    -75 => new DailyReading { FirstReading = "1 Cor 12:12-14, 27-31a", Gospel = "Lk 7:11-17" },
+                    // Wednesday
+                    -74 => new DailyReading { FirstReading = "1 Cor 12:31—13:13", Gospel = "Lk 7:31-35" },
+                    // Thursday
+                    -73 => new DailyReading { FirstReading = "1 Cor 15:1-11", Gospel = "Lk 7:36-50" },
+                    // Friday
+                    -72 => new DailyReading { FirstReading = "1 Cor 15:12-22", Gospel = "Lk 8:1-3" },
+                    // Saturday
+                    -71 => new DailyReading { FirstReading = "1 Cor 15:35-37, 42-49", Gospel = "Lk 8:4-15" },
+                    // Week 25 Sunday
+                    -70 when year is Year.A => new DailyReading { FirstReading = "Is 55:6-9", SecondReading = "Phil 1:20c-24, 27a", Gospel = "Mt 20:1-16a" },
+                    -70 when year is Year.B => new DailyReading { FirstReading = "Wis 2:12, 17-20", SecondReading = "Jas 3:16—4:3", Gospel = "Mk 9:30-37" },
+                    -70 when year is Year.C => new DailyReading { FirstReading = "Am 8:4-7", SecondReading = "1 Tm 2:1-8", Gospel = "Lk 16:1-13" },
+                    // Monday
+                    -69 => new DailyReading { FirstReading = "Prv 3:27-34", Gospel = "Lk 8:16-18" },
+                    // Tuesday
+                    -68 => new DailyReading { FirstReading = "Prv 21:1-6, 10-13", Gospel = "Lk 8:19-21" },
+                    // Wednesday
+                    -67 => new DailyReading { FirstReading = "Prv 30:5-9", Gospel = "Lk 9:1-6" },
+                    // Thursday
+                    -66 => new DailyReading { FirstReading = "Eccl 1:2-11", Gospel = "Lk 9:7-9" },
+                    // Friday
+                    -65 => new DailyReading { FirstReading = "Eccl 3:1-11", Gospel = "Lk 9:18-22" },
+                    // Saturday
+                    -64 => new DailyReading { FirstReading = "Eccl 11:9—12:8", Gospel = "Lk 9:43b-45" },
+                    // Week 26 Sunday
+                    -63 when year is Year.A => new DailyReading { FirstReading = "Ez 18:25-28", SecondReading = "Phil 2:1-11", Gospel = "Mt 21:28-32" },
+                    -63 when year is Year.B => new DailyReading { FirstReading = "Nm 11:25-29", SecondReading = "Jas 5:1-6", Gospel = "Mk 9:38-43, 45, 47-48" },
+                    -63 when year is Year.C => new DailyReading { FirstReading = "Am 6:1a, 4-7", SecondReading = "1 Tm 6:11-16", Gospel = "Lk 16:19-31" },
+                    // Monday
+                    -62 => new DailyReading { FirstReading = "Jb 1:6-22", Gospel = "Lk 9:46-50" },
+                    // Tuesday
+                    -61 => new DailyReading { FirstReading = "Jb 3:1-3, 11-17, 20-23", Gospel = "Lk 9:51-56" },
+                    // Wednesday
+                    -60 => new DailyReading { FirstReading = "Jb 9:1-12, 14-16", Gospel = "Lk 9:57-62" },
+                    // Thursday
+                    -59 => new DailyReading { FirstReading = "Jb 19:21-27", Gospel = "Lk 10:1-12" },
+                    // Friday
+                    -58 => new DailyReading { FirstReading = "Jb 38:1, 12-21; 40:3-5", Gospel = "Lk 10:13-16" },
+                    // Saturday
+                    -57 => new DailyReading { FirstReading = "Jb 42:1-3, 5-6, 12-17", Gospel = "Lk 10:17-24" },
+                    // Week 27 Sunday
+                    -56 when year is Year.A => new DailyReading { FirstReading = "Is 5:1-7", SecondReading = "Phil 4:6-9", Gospel = "Mt 21:33-43" },
+                    -56 when year is Year.B => new DailyReading { FirstReading = "Gn 2:18-24", SecondReading = "Heb 2:9-11", Gospel = "Mk 10:2-16" },
+                    -56 when year is Year.C => new DailyReading { FirstReading = "Hb 1:2-3; 2:2-4", SecondReading = "2 Tm 1:6-8, 13-14", Gospel = "Lk 17:5-10" },
+                    // Monday
+                    -55 => new DailyReading { FirstReading = "Gal 1:6-12", Gospel = "Lk 10:25-37" },
+                    // Tuesday
+                    -54 => new DailyReading { FirstReading = "Gal 1:13-24", Gospel = "Lk 10:38-42" },
+                    // Wednesday
+                    -53 => new DailyReading { FirstReading = "Gal 2:1-2, 7-14", Gospel = "Lk 11:1-4" },
+                    // Thursday
+                    -52 => new DailyReading { FirstReading = "Gal 3:1-5", Gospel = "Lk 11:5-13" },
+                    // Friday
+                    -51 => new DailyReading { FirstReading = "Gal 3:7-14", Gospel = "Lk 11:15-26" },
+                    // Saturday
+                    -50 => new DailyReading { FirstReading = "Gal 3:22-29", Gospel = "Lk 11:27-28" },
+                    // Week 28 Sunday
+                    -49 when year is Year.A => new DailyReading { FirstReading = "Is 25:6-10a", SecondReading = "Phil 4:12-14, 19-20", Gospel = "Mt 22:1-14" },
+                    -49 when year is Year.B => new DailyReading { FirstReading = "Wis 7:7-11", SecondReading = "Heb 4:12-13", Gospel = "Mk 10:17-30" },
+                    -49 when year is Year.C => new DailyReading { FirstReading = "2 Kgs 5:14-17", SecondReading = "2 Tm 2:8-13", Gospel = "Lk 17:11-19" },
+                    // Monday
+                    -48 => new DailyReading { FirstReading = "Gal 4:22-24, 26-27, 31—5:1", Gospel = "Lk 11:29-32" },
+                    // Tuesday
+                    -47 => new DailyReading { FirstReading = "Gal 5:1-6", Gospel = "Lk 11:37-41" },
+                    // Wednesday
+                    -46 => new DailyReading { FirstReading = "Gal 5:18-25", Gospel = "Lk 11:42-46" },
+                    // Thursday
+                    -45 => new DailyReading { FirstReading = "Eph 1:1-10", Gospel = "Lk 11:47-54" },
+                    // Friday
+                    -44 => new DailyReading { FirstReading = "Eph 1:11-14", Gospel = "Lk 12:1-7" },
+                    // Saturday
+                    -43 => new DailyReading { FirstReading = "Eph 1:15-23", Gospel = "Lk 12:8-12" },
+                    // Week 29 Sunday
+                    -42 when year is Year.A => new DailyReading { FirstReading = "Is 45:1, 4-6", SecondReading = "1 Thes 1:1-5b", Gospel = "Mt 22:15-21" },
+                    -42 when year is Year.B => new DailyReading { FirstReading = "Is 53:10-11", SecondReading = "Heb 4:14-16", Gospel = "Mk 10:35-45" },
+                    -42 when year is Year.C => new DailyReading { FirstReading = "Ex 17:8-13", SecondReading = "2 Tm 3:14—4:2", Gospel = "Lk 18:1-8" },
+                    // Monday
+                    -41 => new DailyReading { FirstReading = "Eph 2:1-10", Gospel = "Lk 12:13-21" },
+                    // Tuesday
+                    -40 => new DailyReading { FirstReading = "Eph 2:12-22", Gospel = "Lk 12:35-38" },
+                    // Wednesday
+                    -39 => new DailyReading { FirstReading = "Eph 3:2-12", Gospel = "Lk 12:39-48" },
+                    // Thursday
+                    -38 => new DailyReading { FirstReading = "Eph 3:14-21", Gospel = "Lk 12:49-53" },
+                    // Friday
+                    -37 => new DailyReading { FirstReading = "Eph 4:1-6", Gospel = "Lk 12:54-59" },
+                    // Saturday
+                    -36 => new DailyReading { FirstReading = "Eph 4:7-16", Gospel = "Lk 13:1-9" },
+                    // Week 30 Sunday
+                    -35 when year is Year.A => new DailyReading { FirstReading = "Ex 22:20-26", SecondReading = "1 Thes 1:5c-10", Gospel = "Mt 22:34-40" },
+                    -35 when year is Year.B => new DailyReading { FirstReading = "Jer 31:7-9", SecondReading = "Heb 5:1-6", Gospel = "Mk 10:46-52" },
+                    -35 when year is Year.C => new DailyReading { FirstReading = "Sir 35:12-14, 16-18", SecondReading = "2 Tm 4:6-8, 16-18", Gospel = "Lk 18:9-14" },
+                    // Monday
+                    -34 => new DailyReading { FirstReading = "Eph 4:32—5:8", Gospel = "Lk 13:10-17" },
+                    // Tuesday
+                    -33 => new DailyReading { FirstReading = "Eph 5:21-33", Gospel = "Lk 13:18-21" },
+                    // Wednesday
+                    -32 => new DailyReading { FirstReading = "Eph 6:1-9", Gospel = "Lk 13:22-30" },
+                    // Thursday
+                    -31 => new DailyReading { FirstReading = "Eph 6:10-22", Gospel = "Lk 13:31-35" },
+                    // Friday
+                    -30 => new DailyReading { FirstReading = "Phil 1:1-11", Gospel = "Lk 14:1-6" },
+                    // Saturday
+                    -29 => new DailyReading { FirstReading = "Phil 1:18b-26", Gospel = "Lk 14:1, 7-11" },
+                    // Week 31 Sunday
+                    -28 when year is Year.A => new DailyReading { FirstReading = "Mal 1:14b—2:2b, 8-10", SecondReading = "1 Thes 2:7b-9, 13", Gospel = "Mt 23:1-12" },
+                    -28 when year is Year.B => new DailyReading { FirstReading = "Dt 6:2-6", SecondReading = "Heb 7:23-28", Gospel = "Mk 12:28b-34" },
+                    -28 when year is Year.C => new DailyReading { FirstReading = "Wis 11:22—12:2", SecondReading = "2 Thes 1:11—2:2", Gospel = "Lk 19:1-10" },
+                    // Monday
+                    -27 => new DailyReading { FirstReading = "Phil 2:1-4", Gospel = "Lk 14:12-14" },
+                    // Tuesday
+                    -26 => new DailyReading { FirstReading = "Phil 2:5-11", Gospel = "Lk 14:15-24" },
+                    // Wednesday
+                    -25 => new DailyReading { FirstReading = "Phil 2:12-18", Gospel = "Lk 14:25-33" },
+                    // Thursday
+                    -24 => new DailyReading { FirstReading = "Phil 3:3-8a", Gospel = "Lk 15:1-10" },
+                    // Friday
+                    -23 => new DailyReading { FirstReading = "Phil 3:17—4:1", Gospel = "Lk 16:1-8" },
+                    // Saturday
+                    -22 => new DailyReading { FirstReading = "Phil 4:10-19", Gospel = "Lk 16:9-15" },
+                    // Week 32 Sunday
+                    -21 when year is Year.A => new DailyReading { FirstReading = "Wis 6:12-16", SecondReading = "1 Thes 4:13-18", Gospel = "Mt 25:1-13" },
+                    -21 when year is Year.B => new DailyReading { FirstReading = "1 Kgs 17:10-16", SecondReading = "Heb 9:24-28", Gospel = "Mk 12:38-44" },
+                    -21 when year is Year.C => new DailyReading { FirstReading = "2 Mc 7:1-2, 9-14", SecondReading = "2 Thes 2:16—3:5", Gospel = "Lk 20:27-38" },
+                    // Monday
+                    -20 => new DailyReading { FirstReading = "Ti 1:1-9", Gospel = "Lk 17:1-6" },
+                    // Tuesday
+                    -19 => new DailyReading { FirstReading = "Ti 2:1-8, 11-14", Gospel = "Lk 17:7-10" },
+                    // Wednesday
+                    -18 => new DailyReading { FirstReading = "Ti 3:1-7", Gospel = "Lk 17:11-19" },
+                    // Thursday
+                    -17 => new DailyReading { FirstReading = "Phlm 7-22", Gospel = "Lk 17:20-25" },
+                    // Friday
+                    -16 => new DailyReading { FirstReading = "2 Jn 4-9", Gospel = "Lk 17:26-37" },
+                    // Saturday
+                    -15 => new DailyReading { FirstReading = "3 Jn 5-8", Gospel = "Lk 18:1-8" },
                     // Week 33 Sunday
                     -14 when year is Year.A => new DailyReading { FirstReading = "Prv 31:10-13, 19-20, 30-31", SecondReading = "1 Thes 5:1-6", Gospel = "Mt 25:14-30" },
                     -14 when year is Year.B => new DailyReading { FirstReading = "Dn 12:1-3", SecondReading = "Heb 10:11-14, 18", Gospel = "Mk 13:24-32" },
