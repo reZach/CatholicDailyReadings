@@ -11,8 +11,8 @@ CycleCalculator cycleCalculator = new CycleCalculator();
 BibleProvider bibleProvider = new BibleProvider();
 
 
-for (int i = 2023; i <= 2100; i++)
-{    
+for (int i = 2023; i <= 2400; i++)
+{
     DateTime advent = adventCalculator.Calculate(i);
     DateTime pentecost = moonCalculator.GetPentecost(i);
 
@@ -27,15 +27,15 @@ for (int i = 2023; i <= 2100; i++)
             week--;
 
 
-        if (week == 30)
+        if (week == (18 - 1))
         {
             DailyReading? r = bibleProvider.GetDailyReading(temp);
 
             if (r != null)
             {
-                if (r.Cycle == Cycle.Two && r.Year == Year.A && temp.DayOfWeek == DayOfWeek.Sunday
-                    && temp.Month != 11 && (temp.Day != 1 || temp.Day != 2))
+                if (r.Cycle == Cycle.Two && r.Year == Year.C && temp.DayOfWeek == DayOfWeek.Sunday)
                 {
+                    Console.WriteLine(temp.ToString("MM/dd"));
                     Console.WriteLine(temp.ToShortDateString());
                 }
             }
@@ -45,7 +45,7 @@ for (int i = 2023; i <= 2100; i++)
         temp = temp.AddDays(-1);
     }
 
-    
+
 
     //DateTime pentecost = moonCalculator.GetPentecost(i);
     //DateTime easter = moonCalculator.GetEaster(i);
