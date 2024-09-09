@@ -13,37 +13,55 @@ BibleProvider bibleProvider = new BibleProvider();
 
 for (int i = 2023; i <= 2400; i++)
 {
-    DateTime advent = adventCalculator.Calculate(i);
-    DateTime pentecost = moonCalculator.GetPentecost(i);
+    DateTime d = new DateTime(i, 1, 1);
 
-    DateTime temp = new DateTime(advent.Year, advent.Month, advent.Day);
-    temp = temp.AddDays(-1);
-
-    int week = 34;
-
-    while (temp > pentecost)
+    while (d.Year == i)
     {
-        if (temp.AddDays(1).DayOfWeek == DayOfWeek.Sunday)
-            week--;
+        DailyReading? reading = bibleProvider.GetDailyReading(d);
 
-
-        if (week == (10 - 1))
+        if (reading == null)
         {
-            DailyReading? r = bibleProvider.GetDailyReading(temp);
-
-            if (r != null)
-            {
-                if (r.Cycle == Cycle.One && r.Year == Year.B && temp.DayOfWeek == DayOfWeek.Sunday)
-                {
-                    Console.WriteLine(temp.ToString("MM/dd"));
-                    Console.WriteLine(temp.ToShortDateString());
-                }
-            }
+            Console.WriteLine(d.ToString("yyyy-MM-dd"));
+            reading = bibleProvider.GetDailyReading(d);
         }
+            
 
-
-        temp = temp.AddDays(-1);
+        d = d.AddDays(1);
     }
+
+    Console.WriteLine($"Finished {i}");
+
+    //DateTime advent = adventCalculator.Calculate(i);
+    //DateTime pentecost = moonCalculator.GetPentecost(i);
+
+    //DateTime temp = new DateTime(advent.Year, advent.Month, advent.Day);
+    //temp = temp.AddDays(-1);
+
+    //int week = 34;
+
+    //while (temp > pentecost)
+    //{
+    //    if (temp.AddDays(1).DayOfWeek == DayOfWeek.Sunday)
+    //        week--;
+
+
+    //    if (week == (10 - 1))
+    //    {
+    //        DailyReading? r = bibleProvider.GetDailyReading(temp);
+
+    //        if (r != null)
+    //        {
+    //            if (r.Cycle == Cycle.One && r.Year == Year.B && temp.DayOfWeek == DayOfWeek.Sunday)
+    //            {
+    //                Console.WriteLine(temp.ToString("MM/dd"));
+    //                Console.WriteLine(temp.ToShortDateString());
+    //            }
+    //        }
+    //    }
+
+
+    //    temp = temp.AddDays(-1);
+    //}
 
 
 
