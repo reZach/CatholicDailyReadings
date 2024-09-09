@@ -27,13 +27,13 @@ for (int i = 2023; i <= 2400; i++)
             week--;
 
 
-        if (week == (18 - 1))
+        if (week == (10 - 1))
         {
             DailyReading? r = bibleProvider.GetDailyReading(temp);
 
             if (r != null)
             {
-                if (r.Cycle == Cycle.Two && r.Year == Year.C && temp.DayOfWeek == DayOfWeek.Sunday)
+                if (r.Cycle == Cycle.One && r.Year == Year.B && temp.DayOfWeek == DayOfWeek.Sunday)
                 {
                     Console.WriteLine(temp.ToString("MM/dd"));
                     Console.WriteLine(temp.ToShortDateString());
@@ -51,6 +51,10 @@ for (int i = 2023; i <= 2400; i++)
     //DateTime easter = moonCalculator.GetEaster(i);
     //DateTime advent = adventCalculator.Calculate(i);
     //TimeSpan span = advent - pentecost;
+    //DateTime temp = new DateTime(advent.Year, advent.Month, advent.Day);
+    //DailyReading? r = bibleProvider.GetDailyReading(temp);
+
+    //Console.WriteLine($"{i} {r.Year} {pentecost.ToString("yyyy-MM-dd")} {advent.ToString("yyyy-MM-dd")} {span.Days}");
 
     //// not-skip 
     //if (i == 2035 ||
@@ -74,7 +78,7 @@ for (int i = 2023; i <= 2400; i++)
     //    i == 2092 ||
     //    i == 2097 ||
     //    i == 2100)
-    //Console.WriteLine($"{i} {pentecost.ToString("yyyy-MM-dd")} {span.Days}");
+    //    Console.WriteLine($"{i} {pentecost.ToString("yyyy-MM-dd")} {span.Days}");
 
     //DateTime annunciation = new DateTime(i, 3, 25);
     //DateTime ashWednesday = moonCalculator.GetLent(i);
