@@ -1018,7 +1018,57 @@ namespace CatholicDailyReadings.Business
             {
                 return adventDayDifference switch
                 {
-                    // Week 9
+                    // Week 6
+                    // Tuesday
+                    -201 => new DailyReading { FirstReading = "Gn 6:5-8; 7:1-5, 10", Gospel = "Mk 8:14-21" },
+                    // Wednesday
+                    -200 => new DailyReading { FirstReading = "Gn 8:6-13, 20-22", Gospel = "Mk 8:22-26" },
+                    // Thursday
+                    -199 => new DailyReading { FirstReading = "Gn 9:1-13", Gospel = "Mk 8:27-33" },
+                    // Friday
+                    -198 => new DailyReading { FirstReading = "Gn 11:1-9", Gospel = "Mk 8:34—9:1" },
+                    // Saturday
+                    -197 => new DailyReading { FirstReading = "Heb 11:1-7", Gospel = "Mk 9:2-13" },
+                    // Week 7 Sunday
+                    -196 when year is Year.A => new DailyReading { FirstReading = "Lv 19:1-2, 17-18", SecondReading = "1 Cor 3:16-23", Gospel = "Mt 5:38-48" },
+                    -196 when year is Year.B => new DailyReading { FirstReading = "Is 43:18-19, 21-22, 24b-25", SecondReading = "2 Cor 1:18-22", Gospel = "Mk 2:1-12" },
+                    -196 when year is Year.C => new DailyReading { FirstReading = "1 Sm 26:2, 7-9, 12-13, 22-23", SecondReading = "1 Cor 15:45-49", Gospel = "Lk 6:27-38" },
+                    // Monday
+                    -195 => new DailyReading { FirstReading = "Sir 1:1-10", Gospel = "Mk 9:14-29" },
+                    // Tuesday
+                    -194 => new DailyReading { FirstReading = "Sir 2:1-11", Gospel = "Mk 9:30-37" },
+                    // Wednesday
+                    -193 => new DailyReading { FirstReading = "Sir 4:11-19", Gospel = "Mk 9:38-40" },
+                    // Thursday
+                    -192 => new DailyReading { FirstReading = "Sir 5:1-8", Gospel = "Mk 9:41-50" },
+                    // Friday
+                    -191 => new DailyReading { FirstReading = "Sir 6:5-17", Gospel = "Mk 10:1-12" },
+                    // Saturday
+                    -190 => new DailyReading { FirstReading = "Sir 17:1-15", Gospel = "Mk 10:13-16" },
+                    // Week 8 Sunday
+                    -189 when year is Year.A => new DailyReading { FirstReading = "Is 49:14-15", SecondReading = "1 Cor 4:1-5", Gospel = "Mt 6:24-34" },
+                    -189 when year is Year.B => new DailyReading { FirstReading = "Hos 2:16b, 17b, 21-22", SecondReading = "2 Cor 3:1b-6", Gospel = "Mk 2:18-22" },
+                    -189 when year is Year.C => new DailyReading { FirstReading = "Sir 27:5-8", SecondReading = "1 Cor 15:54-58", Gospel = "Lk 6:39-45" },
+                    // Monday
+                    -188 => new DailyReading { FirstReading = "Sir 17:20-24", Gospel = "Mk 10:17-27" },
+                    // Tuesday
+                    -187 => new DailyReading { FirstReading = "Sir 35:1-12", Gospel = "Mk 10:28-31" },
+                    // Wednesday
+                    -186 => new DailyReading { FirstReading = "Sir 36:1, 4-5a, 10-17", Gospel = "Mk 10:32-45" },
+                    // Thursday
+                    -185 => new DailyReading { FirstReading = "Sir 42:15-25", Gospel = "Mk 10:46-52" },
+                    // Friday
+                    -184 => new DailyReading { FirstReading = "Sir 44:1, 9-13", Gospel = "Mk 11:11-26" },
+                    // Saturday
+                    -183 => new DailyReading { FirstReading = "Sir 51:12cd-20", Gospel = "Mk 11:27-33" },
+                    // Week 9 Sunday
+                    -182 when year is Year.A => new DailyReading { FirstReading = "Dt 11:18, 26-28, 32", SecondReading = "Rom 3:21-25, 28", Gospel = "Mt 7:21-27" },
+                    -182 when year is Year.B => new DailyReading { FirstReading = "Dt 5:12-15", SecondReading = "2 Cor 4:6-11", Gospel = "Mk 2:23—3:6" },
+                    -182 when year is Year.C => new DailyReading { FirstReading = "1 Kgs 8:41-43", SecondReading = "Gal 1:1-2, 6-10", Gospel = "Lk 7:1-10" },
+                    // Monday
+                    -181 => new DailyReading { FirstReading = "Tb 1:3; 2:1a-8", Gospel = "Mk 12:1-12" },
+                    // Tuesday
+                    -180 => new DailyReading { FirstReading = "Tb 2:9-14", Gospel = "Mk 12:13-17" },
                     // Wednesday
                     -179 => new DailyReading { FirstReading = "Tb 3:1-11a, 16-17a", Gospel = "Mk 12:18-27" },
                     // Thursday
@@ -1436,7 +1486,57 @@ namespace CatholicDailyReadings.Business
             {
                 return adventDayDifference switch
                 {
-                    // Week 9
+                    // Week 6
+                    // Tuesday
+                    -201 => new DailyReading { FirstReading = "Jas 1:12-18", Gospel = "Mk 8:14-21" },
+                    // Wednesday
+                    -200 => new DailyReading { FirstReading = "Jas 1:19-27", Gospel = "Mk 8:22-26" },
+                    // Thursday
+                    -199 => new DailyReading { FirstReading = "Jas 2:1-9", Gospel = "Mk 8:27-33" },
+                    // Friday
+                    -198 => new DailyReading { FirstReading = "Jas 2:14-24, 26", Gospel = "Mk 8:34—9:1" },
+                    // Saturday
+                    -197 => new DailyReading { FirstReading = "Jas 3:1-10", Gospel = "Mk 9:2-13" },
+                    // Week 7 Sunday
+                    -196 when year is Year.A => new DailyReading { FirstReading = "Lv 19:1-2, 17-18", SecondReading = "1 Cor 3:16-23", Gospel = "Mt 5:38-48" },
+                    -196 when year is Year.B => new DailyReading { FirstReading = "Is 43:18-19, 21-22, 24b-25", SecondReading = "2 Cor 1:18-22", Gospel = "Mk 2:1-12" },
+                    -196 when year is Year.C => new DailyReading { FirstReading = "1 Sm 26:2, 7-9, 12-13, 22-23", SecondReading = "1 Cor 15:45-49", Gospel = "Lk 6:27-38" },
+                    // Monday
+                    -195 => new DailyReading { FirstReading = "Jas 3:13-18", Gospel = "Mk 9:14-29" },
+                    // Tuesday
+                    -194 => new DailyReading { FirstReading = "Jas 4:1-10", Gospel = "Mk 9:30-37" },
+                    // Wednesday
+                    -193 => new DailyReading { FirstReading = "Jas 4:13-17", Gospel = "Mk 9:38-40" },
+                    // Thursday
+                    -192 => new DailyReading { FirstReading = "Jas 5:1-6", Gospel = "Mk 9:41-50" },
+                    // Friday
+                    -191 => new DailyReading { FirstReading = "Jas 5:9-12", Gospel = "Mk 10:1-12" },
+                    // Saturday
+                    -190 => new DailyReading { FirstReading = "Jas 5:13-22", Gospel = "Mk 10:13-16" },
+                    // Week 8 Sunday
+                    -189 when year is Year.A => new DailyReading { FirstReading = "Is 49:14-15", SecondReading = "1 Cor 4:1-5", Gospel = "Mt 6:24-34" },
+                    -189 when year is Year.B => new DailyReading { FirstReading = "Hos 2:16b, 17b, 21-22", SecondReading = "2 Cor 3:1b-6", Gospel = "Mk 2:18-22" },
+                    -189 when year is Year.C => new DailyReading { FirstReading = "Sir 27:5-8", SecondReading = "1 Cor 15:54-58", Gospel = "Lk 6:39-45" },
+                    // Monday
+                    -188 => new DailyReading { FirstReading = "1 Pt 1:3-9", Gospel = "Mk 10:17-27" },
+                    // Tuesday
+                    -187 => new DailyReading { FirstReading = "1 Pt 1:10-16", Gospel = "Mk 10:28-31" },
+                    // Wednesday
+                    -186 => new DailyReading { FirstReading = "1 Pt 1:18-25", Gospel = "Mk 10:32-45" },
+                    // Thursday
+                    -185 => new DailyReading { FirstReading = "1 Pt 2:2-5, 9-12", Gospel = "Mk 10:46-52" },
+                    // Friday
+                    -184 => new DailyReading { FirstReading = "1 Pt 4:7-13", Gospel = "Mk 11:11-26" },
+                    // Saturday
+                    -183 => new DailyReading { FirstReading = "Jude 17, 20b-25", Gospel = "Mk 11:27-33" },
+                    // Week 9 Sunday
+                    -182 when year is Year.A => new DailyReading { FirstReading = "Dt 11:18, 26-28, 32", SecondReading = "Rom 3:21-25, 28", Gospel = "Mt 7:21-27" },
+                    -182 when year is Year.B => new DailyReading { FirstReading = "Dt 5:12-15", SecondReading = "2 Cor 4:6-11", Gospel = "Mk 2:23—3:6" },
+                    -182 when year is Year.C => new DailyReading { FirstReading = "1 Kgs 8:41-43", SecondReading = "Gal 1:1-2, 6-10", Gospel = "Lk 7:1-10" },
+                    // Monday
+                    -181 => new DailyReading { FirstReading = "2 Pt 1:2-7", Gospel = "Mk 12:1-12" },
+                    // Tuesday
+                    -180 => new DailyReading { FirstReading = "2 Pt 3:12-15a, 17-18", Gospel = "Mk 12:13-17" },
                     // Wednesday
                     -179 => new DailyReading { FirstReading = "2 Tm 1:1-3, 6-12", Gospel = "Mk 12:18-27" },
                     // Thursday
