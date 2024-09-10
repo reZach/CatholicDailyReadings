@@ -3,6 +3,7 @@ using CatholicDailyReadings.Business;
 using CatholicDailyReadings.Models;
 using CatholicDailyReadings.Models.Enums;
 using CatholicDailyReadings.Utils;
+using System.Text;
 
 ChristmasCalculator christmasCalculator = new ChristmasCalculator();
 AdventCalculator adventCalculator = new AdventCalculator();
@@ -10,8 +11,9 @@ MoonCalculator moonCalculator = new MoonCalculator();
 CycleCalculator cycleCalculator = new CycleCalculator();
 BibleProvider bibleProvider = new BibleProvider();
 
+StringBuilder sb = new StringBuilder();
 
-for (int i = 2023; i <= 2400; i++)
+for (int i = 2024; i <= 2124; i++)
 {
     DateTime d = new DateTime(i, 1, 1);
 
@@ -19,17 +21,21 @@ for (int i = 2023; i <= 2400; i++)
     {
         DailyReading? reading = bibleProvider.GetDailyReading(d);
 
-        if (reading == null)
-        {
-            Console.WriteLine(d.ToString("yyyy-MM-dd"));
-            reading = bibleProvider.GetDailyReading(d);
-        }
-            
+        if (reading != null)
+            sb.AppendLine($"\"{d.ToString("yyyy-MM-dd")}&{reading.FirstReading}&{reading.SecondReading}&{reading.Gospel}\",");
+        else
+            throw new Exception();
 
         d = d.AddDays(1);
     }
+}
 
-    Console.WriteLine($"Finished {i}");
+File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\data.h", sb.ToString());
+
+//for (int i = 2024; i <= 2124; i++)
+//{
+
+    //Console.WriteLine($"Finished {i}");
 
     //DateTime advent = adventCalculator.Calculate(i);
     //DateTime pentecost = moonCalculator.GetPentecost(i);
@@ -120,7 +126,7 @@ for (int i = 2023; i <= 2400; i++)
 
 
     //Console.WriteLine($"{new DateTime(i, 3, 19).ToString("MM-dd-yyyy")} {new DateTime(i, 3, 19).DayOfWeek}");
-}
+//}
 
 
 
