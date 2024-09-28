@@ -26,6 +26,13 @@ for (int i = 2024; i <= 2124; i++)
         else
             throw new Exception();
 
+        if (reading.FirstReading.Length > 28)
+            Console.WriteLine($"{d.ToShortDateString()}__{reading.FirstReading}__{reading.FirstReading.Length}");
+        if (reading.SecondReading?.Length > 28)
+            Console.WriteLine($"{d.ToShortDateString()}__{reading.SecondReading}__{reading.SecondReading?.Length}");
+        if (reading.Gospel.Length > 28)
+            Console.WriteLine($"{d.ToShortDateString()}__{reading.Gospel}__{reading.Gospel.Length}");
+
         d = d.AddDays(1);
     }
 }
