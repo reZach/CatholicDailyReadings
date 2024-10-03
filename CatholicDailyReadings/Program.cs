@@ -1,140 +1,185 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CatholicDailyReadings.Business;
 using CatholicDailyReadings.Models;
-using CatholicDailyReadings.Models.Enums;
 using CatholicDailyReadings.Utils;
 using System.Text;
 
-ChristmasCalculator christmasCalculator = new ChristmasCalculator();
-AdventCalculator adventCalculator = new AdventCalculator();
-MoonCalculator moonCalculator = new MoonCalculator();
-CycleCalculator cycleCalculator = new CycleCalculator();
-BibleProvider bibleProvider = new BibleProvider();
 
-StringBuilder sb = new StringBuilder();
 
-for (int i = 2024; i <= 2124; i++)
+void GenerateFilesForELectionary()
 {
-    DateTime d = new DateTime(i, 1, 1);
+    ChristmasCalculator christmasCalculator = new ChristmasCalculator();
+    AdventCalculator adventCalculator = new AdventCalculator();
+    MoonCalculator moonCalculator = new MoonCalculator();
+    CycleCalculator cycleCalculator = new CycleCalculator();
+    BibleProvider bibleProvider = new BibleProvider();
 
-    while (d.Year == i)
+    StringBuilder sb = null;
+    Dictionary<string, int> map = new Dictionary<string, int>();
+
+    for (int i = DateTime.Today.Year; i <= DateTime.Today.Year + 100; i++)
     {
-        DailyReading? reading = bibleProvider.GetDailyReading(d);
+        DateTime d = new DateTime(i, 1, 1);
 
-        if (reading != null)
-            sb.AppendLine($"\"{d.ToString("yyyy-MM-dd")}&{reading.FirstReading}&{reading.SecondReading}&{reading.Gospel}\",");
+        // Start the loop on the current day when this code runs
+        if (d.Year == DateTime.Today.Year)
+        {
+            d = DateTime.Today;
+        }
+
+        while (d.Year == i)
+        {
+            DailyReading? reading = bibleProvider.GetDailyReading(d);
+
+            if (reading != null)
+            {
+                if (sb == null)
+                {
+                    sb = new StringBuilder();
+                    sb.AppendLine($"\"{d.ToString("yyyy-MM-dd")}&{reading.FirstReading}&{reading.SecondReading}&{reading.Gospel}\"");
+                }
+                else
+                {
+                    sb.AppendLine($",\"{d.ToString("yyyy-MM-dd")}&{reading.FirstReading}&{reading.SecondReading}&{reading.Gospel}\"");
+                }
+            }
+            else
+                throw new Exception();
+
+            if (!map.ContainsKey(reading.FirstReading))
+                map.Add(reading.FirstReading, 1);
+            else
+            {
+                int existing = (map[reading.FirstReading]) += 1;
+                map.Remove(reading.FirstReading);
+                map.Add(reading.FirstReading, existing);
+            }
+
+            if (reading.SecondReading != null)
+            {
+                if (!map.ContainsKey(reading.SecondReading))
+                    map.Add(reading.SecondReading, 1);
+                else
+                {
+                    int existing = (map[reading.SecondReading]) += 1;
+                    map.Remove(reading.SecondReading);
+                    map.Add(reading.SecondReading, existing);
+                }
+            }
+
+            if (!map.ContainsKey(reading.Gospel))
+                map.Add(reading.Gospel, 1);
+            else
+            {
+                int existing = (map[reading.Gospel]) += 1;
+                map.Remove(reading.Gospel);
+                map.Add(reading.Gospel, existing);
+            }
+
+            d = d.AddDays(1);
+        }
+    }
+
+    // We want more frequent readings to be earlier in the list, so these
+    // more frequent readings get smaller numbers in the data file. Smaller numbers
+    // can potentially save us more bytes of space
+    List<string> sortedKeys = map.Keys.OrderByDescending(k => map[k]).ToList();
+
+    // Since some less frequent readings are longer versions of more frequent
+    // readings, we need to move the less frequent readings in-front-of (earlier)
+    // in the list so that the code below can correctly map the readings to numbered values
+    for (int i = 0; i < sortedKeys.Count; i++)
+    {
+        for (int j = i + 1; j < sortedKeys.Count; j++)
+        {
+            if (sortedKeys[i].Length < sortedKeys[j].Length &&
+                sortedKeys[j].Contains(sortedKeys[i]))
+            {
+                // Slide the longer version of the reading from the position in the
+                // list where it was, to just before the shorter version of the reading
+                for (int k = j; k > i; k--)
+                {
+                    string temp = sortedKeys[k];
+                    sortedKeys[k] = sortedKeys[k - 1];
+                    sortedKeys[k - 1] = temp;
+                }
+
+                break;
+            }
+        }
+    }
+
+    int index = 0;
+    int lastYear = -1;
+    string[] toUpdate = sb.ToString().Split(Environment.NewLine);
+    StringBuilder readingsIndex = new StringBuilder();
+    StringBuilder yearsIndex = new StringBuilder();
+    readingsIndex.AppendLine("const char *readingsIndex[] = {");
+    yearsIndex.AppendLine("const char *yearsIndex[] = {");
+
+    for (int p = 0; p < sortedKeys.Count; p++)
+    {
+        if (p == sortedKeys.Count - 1)
+            readingsIndex.AppendLine($"\"{sortedKeys[p]}\"");
         else
-            throw new Exception();
+            readingsIndex.AppendLine($"\"{sortedKeys[p]}\",");
 
-        if (reading.FirstReading.Length > 28)
-            Console.WriteLine($"{d.ToShortDateString()}__{reading.FirstReading}__{reading.FirstReading.Length}");
-        if (reading.SecondReading?.Length > 28)
-            Console.WriteLine($"{d.ToShortDateString()}__{reading.SecondReading}__{reading.SecondReading?.Length}");
-        if (reading.Gospel.Length > 28)
-            Console.WriteLine($"{d.ToShortDateString()}__{reading.Gospel}__{reading.Gospel.Length}");
+        for (int j = 0; j < toUpdate.Length; j++)
+        {
+            if (string.IsNullOrEmpty(toUpdate[j]))
+                continue;
 
-        d = d.AddDays(1);
+            string[] lineSplit = toUpdate[j].Split('&');
+            lineSplit[0] = lineSplit[0].Replace("-", string.Empty);
+
+            // Keep track of the years to build an index of when each
+            // year begins so it's faster on the electionary to find
+            // the corresponding readings
+            int year = int.Parse(lineSplit[0].Substring(2, 4));
+            if (lastYear == -1)
+            {
+                yearsIndex.Append($"\"{year}&0\"");
+                lastYear = year;
+            }
+            else if (year != lastYear && year > lastYear)
+            {
+                yearsIndex.Append($",\"{year}&{j}\"");
+                lastYear = year;
+            }
+
+            // Replace hard-coded bible verse with a number (saves space if we do this)
+            for (int i = 1; i < lineSplit.Length; i++)
+            {
+                if (lineSplit[i].Contains(sortedKeys[p]))
+                {
+                    lineSplit[i] = lineSplit[i].Replace(sortedKeys[p], index.ToString());
+                }
+            }
+
+            toUpdate[j] = string.Join('&', lineSplit);
+
+            // Remove last trailing comma
+            if (j == toUpdate.Length - 2 && toUpdate[j][toUpdate[j].Length - 2] == ',')
+                toUpdate[j] = toUpdate[j].Remove(toUpdate[j].Length - 1, 1);
+        }
+
+        index++;
+    }
+    readingsIndex.AppendLine("};");
+    yearsIndex.AppendLine("};");
+
+    File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\data_indexed.h", ("const char* dataIndexed[] = {" + string.Join(Environment.NewLine, toUpdate) + "};"));
+    File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\reading_index.h", readingsIndex.ToString());
+    File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\years_index.h", yearsIndex.ToString());
+
+    Console.WriteLine(map.Keys.Count);
+    StringBuilder sb2 = new StringBuilder();
+    foreach (string key in map.Keys.OrderByDescending(k => map[k]))
+    {
+        Console.WriteLine($"{key} __ {map[key]}");
     }
 }
 
-File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\data.h", sb.ToString());
 
-//for (int i = 2024; i <= 2124; i++)
-//{
-
-    //Console.WriteLine($"Finished {i}");
-
-    //DateTime advent = adventCalculator.Calculate(i);
-    //DateTime pentecost = moonCalculator.GetPentecost(i);
-
-    //DateTime temp = new DateTime(advent.Year, advent.Month, advent.Day);
-    //temp = temp.AddDays(-1);
-
-    //int week = 34;
-
-    //while (temp > pentecost)
-    //{
-    //    if (temp.AddDays(1).DayOfWeek == DayOfWeek.Sunday)
-    //        week--;
-
-
-    //    if (week == (10 - 1))
-    //    {
-    //        DailyReading? r = bibleProvider.GetDailyReading(temp);
-
-    //        if (r != null)
-    //        {
-    //            if (r.Cycle == Cycle.One && r.Year == Year.B && temp.DayOfWeek == DayOfWeek.Sunday)
-    //            {
-    //                Console.WriteLine(temp.ToString("MM/dd"));
-    //                Console.WriteLine(temp.ToShortDateString());
-    //            }
-    //        }
-    //    }
-
-
-    //    temp = temp.AddDays(-1);
-    //}
-
-
-
-    //DateTime pentecost = moonCalculator.GetPentecost(i);
-    //DateTime easter = moonCalculator.GetEaster(i);
-    //DateTime advent = adventCalculator.Calculate(i);
-    //TimeSpan span = advent - pentecost;
-    //DateTime temp = new DateTime(advent.Year, advent.Month, advent.Day);
-    //DailyReading? r = bibleProvider.GetDailyReading(temp);
-
-    //Console.WriteLine($"{i} {r.Year} {pentecost.ToString("yyyy-MM-dd")} {advent.ToString("yyyy-MM-dd")} {span.Days}");
-
-    //// not-skip 
-    //if (i == 2035 ||
-    //    i == 2046 ||
-    //    i == 2062 ||
-    //    i == 2054 ||
-    //    i == 2073 ||
-    //    i == 2084)
-    //    Console.WriteLine($"{i} {pentecost.ToString("yyyy-MM-dd")} {span.Days}");
-
-    //// skip 
-    //if (i == 2027 ||
-    //    i == 2032 ||
-    //    i == 2043 ||
-    //    i == 2054 ||
-    //    i == 2059 ||
-    //    i == 2065 ||
-    //    i == 2070 ||
-    //    i == 2081 ||
-    //    i == 2086 ||
-    //    i == 2092 ||
-    //    i == 2097 ||
-    //    i == 2100)
-    //    Console.WriteLine($"{i} {pentecost.ToString("yyyy-MM-dd")} {span.Days}");
-
-    //DateTime annunciation = new DateTime(i, 3, 25);
-    //DateTime ashWednesday = moonCalculator.GetLent(i);
-    //DateTime easter = moonCalculator.GetEaster(i);
-    //DateTime beginningOfHolyWeek = easter.AddDays(-7); // Palm Sunday
-
-    //if (ashWednesday <= annunciation && annunciation < beginningOfHolyWeek && annunciation.DayOfWeek == DayOfWeek.Sunday)
-    //{
-    //    Console.WriteLine(annunciation.AddDays(1));
-    //    //if (date == annunciation.AddDays(1))
-    //    //    Console.WriteLine(i);
-    //        //return new DailyReading { FirstReading = "Is 7:10-14; 8:10", SecondReading = "Heb 10:4-10", Gospel = "Lk 1:26-38" };
-    //}
-
-
-    //Year year = cycleCalculator.CalculateYear(new DateTime(i, 1, 1));
-
-    //TimeSpan diff = ashWednesday.Subtract(baptismOfTheLord);
-    ////Console.WriteLine($"{i} ({year}) = {diff.TotalDays / 7}");
-
-
-
-    //Console.WriteLine($"{new DateTime(i, 3, 19).ToString("MM-dd-yyyy")} {new DateTime(i, 3, 19).DayOfWeek}");
-//}
-
-
-
+GenerateFilesForELectionary();
 
