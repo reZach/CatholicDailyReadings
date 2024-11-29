@@ -17,7 +17,7 @@ void GenerateFilesForELectionary()
     StringBuilder sb = null;
     Dictionary<string, int> map = new Dictionary<string, int>();
 
-    for (int i = DateTime.Today.Year; i <= DateTime.Today.Year + 100; i++)
+    for (int i = DateTime.Today.Year; i <= DateTime.Today.Year + 900; i++)
     {
         DateTime d = new DateTime(i, 1, 1);
 
@@ -79,6 +79,8 @@ void GenerateFilesForELectionary()
             d = d.AddDays(1);
         }
     }
+
+    Console.WriteLine(sb.ToString());
 
     // We want more frequent readings to be earlier in the list, so these
     // more frequent readings get smaller numbers in the data file. Smaller numbers

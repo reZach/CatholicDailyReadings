@@ -720,7 +720,7 @@ namespace CatholicDailyReadings.Business
                 // 2nd Sunday of Lent
                 11 when year is Year.A => new DailyReading { FirstReading = "Gn 12:1-4a", SecondReading = "2 Tm 1:8b-10", Gospel = "Mt 17:1-9" },
                 11 when year is Year.B => new DailyReading { FirstReading = "Gn 22:1-2, 9a, 10-13, 15-18", SecondReading = "Rom 8:31b-34", Gospel = "Mk 9:2-10" },
-                11 when year is Year.C => new DailyReading { FirstReading = "Gn 15:5-12, 17-18", SecondReading = "Phil 3:17–4:1", Gospel = "Lk 9:28b-36" },
+                11 when year is Year.C => new DailyReading { FirstReading = "Gn 15:5-12, 17-18", SecondReading = "Phil 3:17-4:1", Gospel = "Lk 9:28b-36" },
                 // Monday
                 12 => new DailyReading { FirstReading = "Dn 9:4b-10", Gospel = "Lk 6:36-38" },
                 // Tuesday
@@ -782,9 +782,9 @@ namespace CatholicDailyReadings.Business
                 // Saturday
                 38 => new DailyReading { FirstReading = "Ez 37:21-28", Gospel = "Jn 11:45-56" },
                 // Palm Sunday
-                39 when year is Year.A => new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Mt 26:14 – 27:66" },
-                39 when year is Year.B => new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Mk 14:1 – 15:47" },
-                39 when year is Year.C => new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Lk 22:14 – 23:56" },
+                39 when year is Year.A => new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Mt 26:14 - 27:66" },
+                39 when year is Year.B => new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Mk 14:1 - 15:47" },
+                39 when year is Year.C => new DailyReading { FirstReading = "Is 50:4-7", SecondReading = "Phil 2:6-11", Gospel = "Lk 22:14 - 23:56" },
                 // Monday
                 40 => new DailyReading { FirstReading = "Is 42:1-7", Gospel = "Jn 12:1-11" },
                 // Tuesday
