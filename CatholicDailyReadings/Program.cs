@@ -17,7 +17,7 @@ void GenerateFilesForELectionary()
     StringBuilder sb = null;
     Dictionary<string, int> map = new Dictionary<string, int>();
 
-    for (int i = DateTime.Today.Year; i <= DateTime.Today.Year + 900; i++)
+    for (int i = DateTime.Today.Year; i <= DateTime.Today.Year + 150; i++)
     {
         DateTime d = new DateTime(i, 1, 1);
 
@@ -170,7 +170,36 @@ void GenerateFilesForELectionary()
     readingsIndex.AppendLine("};");
     yearsIndex.AppendLine("};");
 
-    File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\data_indexed.h", ("const char* dataIndexed[] = {" + string.Join(Environment.NewLine, toUpdate) + "};"));
+    // Format the data_indexed.h file to what our digital lectionary needs
+    for (int r = 0; r < toUpdate.Length; r++)
+    {
+        string[] split = toUpdate[r].TrimStart(',').Trim('"').Split('&');
+        if (split.Length <= 1) continue; // Handles end of array
+
+        bool secondReading = !string.IsNullOrEmpty(split[2]);
+
+        /*
+
+         This is how the file should look..
+
+        { 501,  91,  -1},       // 2024-10-05
+        { 861, 862, 863},       // 2024-10-06
+
+        */
+
+        if (secondReading)
+        {
+            toUpdate[r] = $"{{{split[1].PadLeft(4, ' ')},{split[2].PadLeft(4, ' ')},{split[3].PadLeft(4, ' ')}}},       // {split[0].Substring(0, 4)}-{split[0].Substring(4, 2)}-{split[0].Substring(6, 2)}";
+        }
+        else
+        {
+            toUpdate[r] = $"{{{split[1].PadLeft(4, ' ')},{split[3].PadLeft(4, ' ')},  -1}},       // {split[0].Substring(0, 4)}-{split[0].Substring(4, 2)}-{split[0].Substring(6, 2)}";
+        }
+    }
+
+    // data_indexed actually needs to go into a .h file, but saving it as a .h file causes the output to get corrupted;
+    // we save it as a .txt and then copy-paste it into the proper repository
+    File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\data_indexed.txt", ("const char* dataIndexed[] = {" + string.Join(Environment.NewLine, toUpdate) + "};"));
     File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\reading_index.h", readingsIndex.ToString());
     File.WriteAllText("C:\\Users\\zacha\\source\\repos\\CatholicDailyReadings\\years_index.h", yearsIndex.ToString());
 

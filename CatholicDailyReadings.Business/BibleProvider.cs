@@ -404,7 +404,7 @@ namespace CatholicDailyReadings.Business
                 return secondSundayDayDifference switch
                 {
                     // Week 1 Monday
-                    -6 => new DailyReading { FirstReading = "Heb 1:1-6", Gospel = "Mk 1:14-22" },
+                    -6 => new DailyReading { FirstReading = "Heb 1:1-6", Gospel = "Mk 1:14-20" },
                     // Tuesday
                     -5 => new DailyReading { FirstReading = "Heb 2:5-12", Gospel = "Mk 1:21-28" },
                     // Wednesday
@@ -547,7 +547,7 @@ namespace CatholicDailyReadings.Business
                 return secondSundayDayDifference switch
                 {
                     // Week 1 Monday
-                    -6 => new DailyReading { FirstReading = "1 Sm 1:1-8", Gospel = "Mk 1:14-22" },
+                    -6 => new DailyReading { FirstReading = "1 Sm 1:1-8", Gospel = "Mk 1:14-20" },
                     // Tuesday
                     -5 => new DailyReading { FirstReading = "1 Sm 1:9-22", Gospel = "Mk 1:21-28" },
                     // Wednesday

@@ -741,7 +741,7 @@ namespace CatholicDailyReadings.BusinessTests
             DailyReading? reading = _bibleProvider.GetDailyReading(day);
 
             Assert.NotNull(reading);
-            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Heb 1:1-6", Gospel = "Mk 1:14-22" }.XUnitComparer);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "Heb 1:1-6", Gospel = "Mk 1:14-20" }.XUnitComparer);
         }
 
         [Fact]
@@ -1509,7 +1509,7 @@ namespace CatholicDailyReadings.BusinessTests
             DailyReading? reading = _bibleProvider.GetDailyReading(day);
 
             Assert.NotNull(reading);
-            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "1 Sm 1:1-8", Gospel = "Mk 1:14-22" }.XUnitComparer);
+            Assert.Equal(reading.XUnitComparer, new DailyReading { FirstReading = "1 Sm 1:1-8", Gospel = "Mk 1:14-20" }.XUnitComparer);
         }
 
         [Fact]
